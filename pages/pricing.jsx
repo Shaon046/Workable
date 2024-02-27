@@ -4,11 +4,7 @@ import Button from "@mui/material/Button";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Footer from "./components/Footer";
 import PricingGrid from "./components/pricingPage/PricingGrid";
-import Accordion from "@mui/material/Accordion";
-import AccordionActions from "@mui/material/AccordionActions";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 
 const Main = styled.div`
   width: 100%;
@@ -57,13 +53,6 @@ const PrimaryButton = styled(Button)`
   }
 `;
 
-const SectionTwobuttonContainer = styled.div`
-  background-color: #ffffff;
-  width: 95%;
-  border-radius: 0 0 6px 6px;
-  padding: 10px;
-  margin: auto;
-`;
 
 const Sectionthree = styled.div`
   margin-top: 300px;
@@ -83,29 +72,7 @@ const List = styled.li`
   margin-top: 2px;
 `;
 
-const Shape = styled.div`
-  position: absolute;
-  z-index: -1;
-  height: 1200px;
-  width: 100%;
 
-  border-radius: 100% 0% 0% 82% / 59% 10% 10% 5%;
-  background-color: var(--primary-content);
-
-  @media (max-width: 767px) {
-    height: 2700px;
-    border-radius: 84% 0% 49% 81% / 12% 58% 1% 34%;
-  }
-
-  @media (min-width: 767px) {
-    height: 2700px;
-    border-radius: 84% 0% 49% 81% / 12% 58% 1% 34%;
-  }
-
-  @media (min-width: 1200px) {
-    height: 1200px;
-  }
-`;
 
 const Review = styled.div`
   margin-top: 200px;
@@ -152,19 +119,7 @@ const centerText = { display: "flex", alignItems: "center" };
 const pricing = () => {
   return (
     <Main>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          Accordion 1
-        </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </AccordionDetails>
-      </Accordion>
+      
 
       <SectionOne>
         <Texts fontSize={"46px"} style={{ fontWeight: "900" }}>
@@ -188,7 +143,7 @@ const pricing = () => {
       {/* 
 //////design */}
 
-      <Shape />
+     
 
     <PricingGrid/>
 
