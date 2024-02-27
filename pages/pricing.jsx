@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { style } from "@mui/system";
+import Footer from "./components/Footer";
+import { Translate } from "@mui/icons-material";
 
 const Main = styled.div`
   width: 100%;
@@ -21,15 +22,25 @@ const SectionOne = styled.div`
 
 const Texts = styled.p`
   color: var(--primary-color);
-
   font-size: ${({ fontSize }) => fontSize};
   margin-top: 20px;
   text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: ${({ fontSize }) => `calc(${fontSize} - 60%)`};
+  }
+
+  @media (min-width: 767px) {
+    font-size: ${({ fontSize }) => `calc(${fontSize} - 30%)`};
+  }
+
+  @media (min-width: 1200px) {
+    font-size: ${({ fontSize }) => fontSize};
+  }
 `;
 
 const PrimaryButton = styled(Button)`
   background-color: var(--primary-color);
-
   margin-top: 20px;
   height: 50px;
   padding: 9px;
@@ -44,18 +55,32 @@ const PrimaryButton = styled(Button)`
 const Sectiontwo = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 0fr);
   width: 95%;
   background-color: white;
   padding: 30px;
   box-shadow: 1px 1px 10px gray;
-  border-radius: 6px;
+  border-radius: 6px 6px 0 0;
   margin: auto;
+  z-index: 1;
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const GridContainers = styled.div`
   background-color: white;
   margin: 0 10px 0 10px;
-  padding: 30px;
+  padding: 30px 0;
   border-radius: 6px;
 `;
 
@@ -66,7 +91,16 @@ const GridBox = styled.div`
   margin-top: 20px;
 `;
 
+const SectionTwobuttonContainer = styled.div`
+  background-color: #ffffff;
+  width: 95%;
+  border-radius: 0 0 6px 6px;
+  padding: 10px;
+  margin: auto;
+`;
+
 const Sectionthree = styled.div`
+  margin-top: 200px;
   height: 325px;
 `;
 
@@ -84,7 +118,42 @@ const List = styled.li`
   margin-top: 2px;
 `;
 
+const Shape = styled.div`
+  position: absolute;
+  z-index: -1;
+  height: 1200px;
+  width: 100%;
+
+  border-radius: 100% 0% 0% 82% / 59% 10% 10% 5%;
+  background-color: var(--primary-content);
+`;
+
+const Review = styled.div`
+  margin-top: 200px;
+  background: url("wave.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 700px;
+`;
+
+const ReviewGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  transform: translate(0, 10%);
+`;
+
+const Reviewcard = styled.div`
+  height: 175px;
+  width: 375px;
+  margin-top: 20px;
+  background-color: #ffffff;
+`;
+
 ////Style variables
+const primaryColor = "var( --primary-color)";
 const primarycontent = "var(--primary-content)";
 const lightGray = "var(--gray-light)";
 const deepGray = "var(--gray-deep)";
@@ -94,20 +163,28 @@ const pricing = () => {
   return (
     <Main>
       <SectionOne>
-        <Texts fontSize={"46px"} style={{ fontWeight: "700px" }}>
+        <Texts fontSize={"46px"} style={{ fontWeight: "900" }}>
           Feature-rich plans with upfront pricing
         </Texts>
 
-        <Texts fontSize={"20px"} style={{ color: "black" }}>
+        <Texts
+          fontSize={"20px"}
+          style={{ color: "black", lineHeight: "1.5", width: "400" }}
+        >
           Over 27,000 companies have hired 1.5 million candidates with Workable.
           Manage your entire process, from sourcing to employee onboarding and
           management with the world’s most complete recruiting software.
         </Texts>
 
-        <PrimaryButton variant="contained">
+        <PrimaryButton variant="contained" styled={{ marginTop: "20px" }}>
           Contained <NavigateNextIcon />{" "}
         </PrimaryButton>
       </SectionOne>
+
+      {/* 
+//////design */}
+
+      <Shape />
 
       <Sectiontwo>
         {/* /////Grid One */}
@@ -127,7 +204,7 @@ const pricing = () => {
                 height: "1rem",
                 borderRadius: "30px",
                 padding: "3px",
-                fontSize: "11px",
+                fontSize: "7px",
                 fontWeight: "800",
                 ...centerText,
               }}
@@ -191,8 +268,103 @@ const pricing = () => {
               height: "210px",
               border: "1px solid gray ",
               borderRadius: "6px",
+              flexDirection: "column",
+              padding: "20px",
             }}
-          ></GridBox>
+          >
+            <p style={{ fontSize: "10px", fontWeight: "900" }}>PREMIUM TOOLS</p>
+
+            <p>Optional hiring tools for this plan.</p>
+
+            <div>
+              <ul>
+                <li
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    textAlign: "center",
+                    marginTop: "5px",
+                  }}
+                >
+                  {" "}
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      color: primaryColor,
+                      fontWeight: "800",
+                    }}
+                  >
+                    {" "}
+                    VIDEO INTERVIEWS
+                  </p>
+                  <p>
+                    +{" "}
+                    <span style={{ fontSize: "20px", fontWeight: "800" }}>
+                      $49
+                    </span>
+                    /mo
+                  </p>{" "}
+                </li>
+
+                <li
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    textAlign: "center",
+                    marginTop: "5px",
+                  }}
+                >
+                  {" "}
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      color: primaryColor,
+                      fontWeight: "800",
+                    }}
+                  >
+                    VIDEO INTERVIEWS
+                  </p>
+                  <p>
+                    +{" "}
+                    <span style={{ fontSize: "20px", fontWeight: "800" }}>
+                      $49
+                    </span>
+                    /mo
+                  </p>{" "}
+                </li>
+
+                <li
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    textAlign: "center",
+                    marginTop: "5px",
+                  }}
+                >
+                  {" "}
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      color: primaryColor,
+                      fontWeight: "800",
+                    }}
+                  >
+                    VIDEO INTERVIEWS
+                  </p>
+                  <p>
+                    +{" "}
+                    <span style={{ fontSize: "20px", fontWeight: "800" }}>
+                      $49
+                    </span>
+                    /mo
+                  </p>{" "}
+                </li>
+              </ul>
+            </div>
+          </GridBox>
         </GridContainers>
 
         {/* /////Grid Two */}
@@ -212,7 +384,7 @@ const pricing = () => {
                 height: "1rem",
                 borderRadius: "30px",
                 padding: "3px",
-                fontSize: "11px",
+                fontSize: "7px",
                 fontWeight: "800",
                 ...centerText,
               }}
@@ -297,7 +469,7 @@ const pricing = () => {
                 height: "1rem",
                 borderRadius: "30px",
                 padding: "3px",
-                fontSize: "11px",
+                fontSize: "7px",
                 fontWeight: "800",
                 ...centerText,
               }}
@@ -364,13 +536,17 @@ const pricing = () => {
             }}
           ></GridBox>
         </GridContainers>
+      </Sectiontwo>
+
+      <SectionTwobuttonContainer>
         <div
           style={{
-            gridColumn: "1/4",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
+
+            marginBottom: "50px",
           }}
         >
           <Texts>
@@ -381,20 +557,20 @@ const pricing = () => {
             Get a live demo
           </PrimaryButton>
         </div>
-      </Sectiontwo>
-
-      <Texts
-        fontSize={"48px"}
-        style={{
-          fontWeight: "700",
-          color: deepGray,
-          margin: "130px 0 130px 0",
-        }}
-      >
-        Features available in all plans
-      </Texts>
+      </SectionTwobuttonContainer>
 
       <Sectionthree>
+        <Texts
+          fontSize={"48px"}
+          style={{
+            fontWeight: "700",
+            color: deepGray,
+            margin: "130px 0 130px 0",
+          }}
+        >
+          Features available in all plans
+        </Texts>
+
         <SectionThreeGrid style={{ width: "95%" }}>
           {/* ////grid one */}
           <div>
@@ -480,6 +656,42 @@ const pricing = () => {
           </div>
         </SectionThreeGrid>
       </Sectionthree>
+
+      {/* /////Review */}
+
+      <Review>
+        <ReviewGrid>
+          <p
+            style={{
+              gridColumn: "1/3",
+              gridRow: "2/3",
+              fontSize: "48px",
+              fontWeight: "900",
+              padding: "40px",
+              color: "white",
+            }}
+          >
+            of GetApp reviewers recommend Workable to a friend or colleague
+          </p>
+          <Reviewcard
+            style={{
+              gridColumn: "3/4",
+              gridRow: "1/2",
+              boxShadow: " 0 10px 10px gray",
+            }}
+          />
+          <Reviewcard style={{ gridColumn: "3/4", gridRow: "2/3" }} />
+          <Reviewcard style={{ gridColumn: "3/4", gridRow: "3/4" }} />
+          <Reviewcard
+            style={{
+              gridColumn: "2/3",
+              gridRow: "3/4",
+              transform: "translate(10%,-10%)",
+            }}
+          />
+        </ReviewGrid>
+      </Review>
+      <Footer />
     </Main>
   );
 };
