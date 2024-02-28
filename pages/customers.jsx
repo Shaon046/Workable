@@ -1,17 +1,24 @@
 import React from "react";
-import styled ,{ keyframes }from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Typography } from "@mui/material";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
+import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
+import ScreenSizeComponent from "./components/SreenSize";
 
+//screen size
+
+const Responsive = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Main = styled.div`
-  width: 100%;
-
+  max-width: 100%;
 `;
 const SectionOne = styled.div`
   display: flex;
@@ -102,7 +109,6 @@ const CarouselCourtesyText = styled.div`
   height: 50px;
 `;
 
-
 ////////section three
 
 const SectionThree = styled.div`
@@ -114,55 +120,45 @@ const SectionThree = styled.div`
 
 const SectionThreeContent = styled.div`
   width: 70%;
-
   height: 350px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 `;
 
 const ContentLeft = styled.div`
-  width: 100%;
-
   justify-self: center;
   align-self: center;
 `;
 const ContentRight = styled.div`
-  width: 100%;
-padding-left: 30px;
-justify-content: center;
-align-items: center;
+  padding-left: 30px;
+  justify-content: center;
+  align-items: center;
   justify-self: center;
   align-self: center;
 `;
 
+const CustomListItemButton = styled(ListItemButton)`
+  width: 230px;
+  margin: auto;
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
 
+  .MuiSvgIcon-root {
+    font-size: 30px;
+  }
 
-const CustomListItemButton=styled(ListItemButton)`
-width :230px;
-margin: auto;
-border-bottom: 1px solid gray;
-padding-bottom: 20px;
-
-.MuiSvgIcon-root {
-        font-size: 30px;
-        
-    }
-
-&:hover {
+  &:hover {
     border-bottom: 1px solid var(--primary-color);
     color: var(--primary-color);
     background-color: transparent;
     .MuiSvgIcon-root {
-        color: var(--primary-color);
-        font-size: 30px;
+      color: var(--primary-color);
+      font-size: 30px;
     }
-}
+  }
 `;
 
-
-
 ////section four
-
 
 const spinAnimation = keyframes`
     0% {
@@ -183,61 +179,84 @@ const spinAnimation = keyframes`
     }
 `;
 
+const SectionFour = styled.div`
+  width: 100%;
+  height: 1000px;
+  background-image: url(wave.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: var(--primary-content); */
+  position: relative;
+  z-index: 999;
+`;
 
-const SectionFour=styled.div`
- height: 700px;
-    background-image: url(wave.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-`
+const RoundContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-const RoundContainer=styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-    
-height: ${({height})=>height};
-width: ${({height})=>height};
+  height: ${({ height }) => height};
+  width: ${({ height }) => height};
 
-border-radius: 100px;
-background-color: #ffffff;animation: ${spinAnimation} 4s linear infinite;
-position: absolute;
-top: ${({top})=>top};
-left: ${({left})=>left};;
-box-shadow: 0px 0px 10px gray;
-z-index: 10;
+  border-radius: 100px;
+  background-color: #ffffff;
+  animation: ${spinAnimation} 4s linear infinite;
+  position: absolute;
+  top: ${({ top }) => top};
+  left: ${({ left }) => left};
+  box-shadow: 0px 0px 10px gray;
+  z-index: 10;
+`;
+const SectionFourContent = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-`
+  width: 100%;
+  position: absolute;
+  top: 40%;
+`;
+const LeftItem = styled.div`
+  width: 100%;
+  padding: 20px;
+`;
 
+const RightItem = styled.div``;
 
-const SectionFourContent=styled.div`
-display: grid;
-grid-template-columns: repeat(2,1fr);
-background-color: #ababab;
+const StaticRoundContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-width: 100%;
-position: absolute;
-top: 40%;
-`
-const LeftItem=styled.div`
-height: 300px;width:100%;
-background-color: #333333;
+  height: ${({ height }) => height};
+  width: ${({ height }) => height};
 
-`
+  border-radius: 100px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px gray;
+  z-index: 10;
+`;
 
-const RightItem=styled.div`
-height: 300px;width:100%;
-background-color: #8d8d8d;
-`
+const List = styled.li`
+  list-style-type: none;
+  display: flex;
+  padding: 3px;
+  align-items: center;
+  color: white;
 
-const StaticRoundContainer=styled.div`
-    
-    
-`
-
+  &:nth-child(1) {
+  }
+  &:nth-child(2) {
+  }
+  &:nth-child(3) {
+  }
+  &:nth-child(4) {
+  }
+  &:nth-child(5) {
+  }
+`;
 
 const customers = () => {
+  console.log(ScreenSizeComponent());
   const image = [
     {
       id: "0",
@@ -290,138 +309,153 @@ const customers = () => {
   ];
 
   return (
-    <Main>
-      <SectionOne>
-        <Texts fontSize={"46px"} style={{ fontWeight: "600" }}>
-          In good company
-        </Texts>
+    <Responsive>
+      <Main>
+        <SectionOne>
+          <Texts fontSize={"46px"} style={{ fontWeight: "600" }}>
+            In good company
+          </Texts>
 
-        <Texts
-          fontSize={"20px"}
-          style={{ color: "black", lineHeight: "1.5", width: "540px" }}
-        >
-          Companies of all shapes and sizes are using Workable to advance their
-          hiring — and their organizations.
-        </Texts>
-      </SectionOne>
+          <Texts
+            fontSize={"20px"}
+            style={{ color: "black", lineHeight: "1.5", width: "540px" }}
+          >
+            Companies of all shapes and sizes are using Workable to advance
+            their hiring — and their organizations.
+          </Texts>
+        </SectionOne>
 
-      <SectionTwo>
-        <Carousel>
-          {image.map((image, key) => (
-            <>
-              <CarouselContainer>
-                <CarouselTextDiv>
-                  <CarouselLogo>logo</CarouselLogo>
-                  <Texts style={{ fontSize: " calc(12px + 1vw)" }}>
-                    "This [in-person interview] process is not possible for us
-                    right now due to the [COVID-19] crisis. This tool has helped
-                    us be more efficient during this time and get our jobs done.
-                    Thank you!"
-                  </Texts>
-                  <CarouselCourtesy>
-                    <CarouselCourtesyImage>
-                      <img src="" alt="" />
-                    </CarouselCourtesyImage>
+        <SectionTwo>
+          <Carousel>
+            {image.map((image, key) => (
+              <>
+                <CarouselContainer>
+                  <CarouselTextDiv>
+                    <CarouselLogo>logo</CarouselLogo>
+                    <Texts style={{ fontSize: " calc(12px + 1vw)" }}>
+                      "This [in-person interview] process is not possible for us
+                      right now due to the [COVID-19] crisis. This tool has
+                      helped us be more efficient during this time and get our
+                      jobs done. Thank you!"
+                    </Texts>
+                    <CarouselCourtesy>
+                      <CarouselCourtesyImage>
+                        <img src="" alt="" />
+                      </CarouselCourtesyImage>
 
-                    <CarouselCourtesyText>
-                      <p>name and tile </p> <p>position</p>
-                    </CarouselCourtesyText>
-                  </CarouselCourtesy>
-                </CarouselTextDiv>
+                      <CarouselCourtesyText>
+                        <p>name and tile </p> <p>position</p>
+                      </CarouselCourtesyText>
+                    </CarouselCourtesy>
+                  </CarouselTextDiv>
 
-                <CarouselImageDiv></CarouselImageDiv>
-              </CarouselContainer>
-            </>
-          ))}
-        </Carousel>
-      </SectionTwo>
+                  <CarouselImageDiv></CarouselImageDiv>
+                </CarouselContainer>
+              </>
+            ))}
+          </Carousel>
+        </SectionTwo>
 
-      <SectionThree>
-        <SectionThreeContent>
-          <ContentLeft>
-            <Texts fontSize={"40px"} style={{ fontWeight: "900" }}>
-              Improving outcomes, whatever the hiring challenge
-            </Texts>
-            <Texts fontSize={"16px"} style={{ fontWeight: "500" }}>
-              There’s no challenge our customers haven’t seen — or solved.
-              Here’s what they’ve been accomplishing lately.
-            </Texts>
-          </ContentLeft>
-          <ContentRight>
-            <div>
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon  />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                GOING REMOTE
-                </Typography>
-              </CustomListItemButton>
+        <SectionThree>
+          <SectionThreeContent>
+            <ContentLeft>
+              <Texts fontSize={"40px"} style={{ fontWeight: "900" }}>
+                Improving outcomes, whatever the hiring challenge
+              </Texts>
+              <Texts fontSize={"16px"} style={{ fontWeight: "500" }}>
+                There’s no challenge our customers haven’t seen — or solved.
+                Here’s what they’ve been accomplishing lately.
+              </Texts>
+            </ContentLeft>
+            <ContentRight>
+              <div>
+                <CustomListItemButton>
+                  <ListItemIcon>
+                    <PlayCircleFilledWhiteIcon />
+                  </ListItemIcon>
+                  <Typography fontWeight={600} fontSize={12} variant="body1">
+                    GOING REMOTE
+                  </Typography>
+                </CustomListItemButton>
+                <CustomListItemButton>
+                  <ListItemIcon>
+                    <PlayCircleFilledWhiteIcon />
+                  </ListItemIcon>
+                  <Typography fontWeight={600} fontSize={12} variant="body1">
+                    CUTTING COSTS
+                  </Typography>
+                </CustomListItemButton>{" "}
+                <CustomListItemButton>
+                  <ListItemIcon>
+                    <PlayCircleFilledWhiteIcon />
+                  </ListItemIcon>
+                  <Typography fontWeight={600} fontSize={12} variant="body1">
+                    DIGITAL TRANSFORMATION
+                  </Typography>
+                </CustomListItemButton>{" "}
+                <CustomListItemButton>
+                  <ListItemIcon>
+                    <PlayCircleFilledWhiteIcon />
+                  </ListItemIcon>
+                  <Typography fontWeight={600} fontSize={12} variant="body1">
+                    REDUCING TIME TO HIRE
+                  </Typography>
+                </CustomListItemButton>{" "}
+                <CustomListItemButton>
+                  <ListItemIcon>
+                    <PlayCircleFilledWhiteIcon />
+                  </ListItemIcon>
+                  <Typography fontWeight={600} fontSize={12} variant="body1">
+                    RAPIDLY SCALING
+                  </Typography>
+                </CustomListItemButton>{" "}
+                <CustomListItemButton>
+                  <ListItemIcon>
+                    <PlayCircleFilledWhiteIcon />
+                  </ListItemIcon>
+                  <Typography fontWeight={600} fontSize={12} variant="body1">
+                    RAPIDLY SCALING
+                  </Typography>
+                </CustomListItemButton>
+              </div>
+            </ContentRight>
+          </SectionThreeContent>
+        </SectionThree>
 
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                CUTTING COSTS
-                </Typography>
-              </CustomListItemButton> <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                DIGITAL TRANSFORMATION
-                </Typography>
-              </CustomListItemButton> <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                REDUCING TIME TO HIRE
-                </Typography>
-              </CustomListItemButton> <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                RAPIDLY SCALING
-                </Typography>
-              </CustomListItemButton> <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                RAPIDLY SCALING
-                </Typography>
-              </CustomListItemButton>
-            </div>
+        <SectionFour>
+          <RoundContainer height={"200px"} top={"6%"} left={"20%"} />
+          <RoundContainer height={"150px"} top={"18%"} left={"80%"} />
 
-            
-          </ContentRight>
-        </SectionThreeContent>
-      </SectionThree>
+          <SectionFourContent>
+            <LeftItem>
+              <ul>
+                <List>
+                  <StaticRoundContainer height={"100px"} />{" "}
+                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                </List>
 
+                <List>
+                  <StaticRoundContainer height={"100px"} />{" "}
+                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                </List>
 
-      <SectionFour>
-   <RoundContainer height={'200px'}  top={"6%"} left={"20%"}/> 
-   <RoundContainer height={'150px'}  top={"18%"} left={"80%"}/> 
+                <List>
+                  <StaticRoundContainer height={"100px"} />{" "}
+                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                </List>
 
-<SectionFourContent>
-<LeftItem>
+                <List>
+                  <StaticRoundContainer height={"100px"} />{" "}
+                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                </List>
+              </ul>
+            </LeftItem>
 
-
-    
- 
-
-
-</LeftItem>
-
-
-<RightItem></RightItem>
-</SectionFourContent>
-
-      </SectionFour>
-    </Main>
+            <RightItem></RightItem>
+          </SectionFourContent>
+        </SectionFour>
+      </Main>
+    </Responsive>
   );
 };
 
