@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Footer from "./components/Footer";
 import PricingGrid from "./components/pricingPage/PricingGrid";
-
+import ScreenSizeComponent from './components/SreenSize'
 
 const Main = styled.div`
   width: 100%;
@@ -117,9 +117,11 @@ const deepGray = "var(--gray-deep)";
 const centerText = { display: "flex", alignItems: "center" };
 
 const pricing = () => {
+
+
   return (
     <Main>
-      
+
 
       <SectionOne>
         <Texts fontSize={"46px"} style={{ fontWeight: "900" }}>
