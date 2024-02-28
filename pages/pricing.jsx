@@ -28,11 +28,11 @@ const Texts = styled.p`
   text-align: center;
 
   @media (max-width: 767px) {
-    font-size: ${({ fontSize }) => `calc(${fontSize} - 60%)`};
+    font-size: ${({ fontSize }) => `calc(${fontSize} - 20%)`};
   }
 
   @media (min-width: 767px) {
-    font-size: ${({ fontSize }) => `calc(${fontSize} - 30%)`};
+    font-size: ${({ fontSize }) => `calc(${fontSize} - 10%)`};
   }
 
   @media (min-width: 1200px) {
