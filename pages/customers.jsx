@@ -1,16 +1,17 @@
 import React from "react";
-import styled from "styled-components";
+import styled ,{ keyframes }from "styled-components";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Typography } from "@mui/material";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
+
+
 const Main = styled.div`
   width: 100%;
+
 `;
 const SectionOne = styled.div`
   display: flex;
@@ -101,6 +102,7 @@ const CarouselCourtesyText = styled.div`
   height: 50px;
 `;
 
+
 ////////section three
 
 const SectionThree = styled.div`
@@ -142,7 +144,6 @@ border-bottom: 1px solid gray;
 padding-bottom: 20px;
 
 .MuiSvgIcon-root {
-      
         font-size: 30px;
         
     }
@@ -156,9 +157,85 @@ padding-bottom: 20px;
         font-size: 30px;
     }
 }
-
-
 `;
+
+
+
+////section four
+
+
+const spinAnimation = keyframes`
+    0% {
+        transform: translate(-2px, 0);
+    }
+    25% {
+        transform: translate(0,-2px);
+    }
+    50% {
+        transform: translate(2px,0);
+    }
+    75% {
+        transform: translate(0,2px);
+    }
+   
+    100% {
+        transform: translate(-2px, 0);
+    }
+`;
+
+
+const SectionFour=styled.div`
+ height: 700px;
+    background-image: url(wave.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+`
+
+const RoundContainer=styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+    
+height: ${({height})=>height};
+width: ${({height})=>height};
+
+border-radius: 100px;
+background-color: #ffffff;animation: ${spinAnimation} 4s linear infinite;
+position: absolute;
+top: ${({top})=>top};
+left: ${({left})=>left};;
+box-shadow: 0px 0px 10px gray;
+z-index: 10;
+
+`
+
+
+const SectionFourContent=styled.div`
+display: grid;
+grid-template-columns: repeat(2,1fr);
+background-color: #ababab;
+
+width: 100%;
+position: absolute;
+top: 40%;
+`
+const LeftItem=styled.div`
+height: 300px;width:100%;
+background-color: #333333;
+
+`
+
+const RightItem=styled.div`
+height: 300px;width:100%;
+background-color: #8d8d8d;
+`
+
+const StaticRoundContainer=styled.div`
+    
+    
+`
+
 
 const customers = () => {
   const image = [
@@ -318,9 +395,32 @@ const customers = () => {
                 </Typography>
               </CustomListItemButton>
             </div>
+
+            
           </ContentRight>
         </SectionThreeContent>
       </SectionThree>
+
+
+      <SectionFour>
+   <RoundContainer height={'200px'}  top={"6%"} left={"20%"}/> 
+   <RoundContainer height={'150px'}  top={"18%"} left={"80%"}/> 
+
+<SectionFourContent>
+<LeftItem>
+
+
+    
+ 
+
+
+</LeftItem>
+
+
+<RightItem></RightItem>
+</SectionFourContent>
+
+      </SectionFour>
     </Main>
   );
 };
