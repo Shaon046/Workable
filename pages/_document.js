@@ -11,8 +11,8 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <NavBar style={{ maxWidth: "5000px", margin: "0 auto" }} />
-      <body style={{ maxWidth: "5000px", margin: "0 auto" }}>
+      <NavBar style={{ maxWidth: "3000px", margin: "0 auto" }} />
+      <body style={{ maxWidth: "3000px", margin: "0 auto" }}>
         <Main />
         <NextScript />
       </body>

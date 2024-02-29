@@ -4,9 +4,9 @@ import { Typography, Box, Button } from "@mui/material";
 import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
 import Link from "next/link";
 import Image from "next/image";
-import CardOne from "./LandingPageUtils/CardOne";
-import CardTwo from "./LandingPageUtils/CardTwo";
-import CardThree from "./LandingPageUtils/CardThree";
+import CardOne from "./components/LandingPageUtils/CardOne";
+import CardTwo from "./components/LandingPageUtils/CardTwo";
+import CardThree from "./components/LandingPageUtils/CardThree";
 import Footer from "./components/Footer";
 
 const Body = styled.div`
@@ -291,8 +291,9 @@ const landingPage = () => {
                 margin: "20px",
               }}
             >
-              Collaborate with hiring teams to evaluate applicants, gather
-              feedback and decide who's best, all in one recruiting system.
+              {
+                "Collaborate with hiring teams to evaluate applicants, gather feedback and decide who's best, all in one recruiting system."
+              }
             </Typography>
 
             <LearnMore href="">LEARN MORE</LearnMore>
