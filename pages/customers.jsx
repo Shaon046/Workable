@@ -181,13 +181,26 @@ const spinAnimation = keyframes`
 
 const SectionFour = styled.div`
   width: 100%;
-  height: 1000px;
-  background-image: url(wave.svg);
+  /* height: 1000px; */
+  /* background-image: url(wave.svg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   /* background-color: var(--primary-content); */
   position: relative;
   z-index: 999;
+`;
+
+const Wave = styled.div`
+  width: 100%;
+  height: 200px;
+  background-image: url(wave.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+`;
+const SectionFourContainer = styled.div`
+  width: 100%;
+
+  background-color: var(--primary-content);
 `;
 
 const RoundContainer = styled.div`
@@ -210,8 +223,8 @@ const RoundContainer = styled.div`
 const SectionFourContent = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
   width: 100%;
+
   position: absolute;
   top: 40%;
 `;
@@ -244,14 +257,20 @@ const List = styled.li`
   color: white;
 
   &:nth-child(1) {
+    transform: translate(10%);
   }
+
   &:nth-child(2) {
+    transform: translate(50%);
   }
   &:nth-child(3) {
+    transform: translate(20%);
   }
   &:nth-child(4) {
+    transform: translate(40%);
   }
   &:nth-child(5) {
+    transform: translate(25%);
   }
 `;
 
@@ -423,36 +442,44 @@ const customers = () => {
         </SectionThree>
 
         <SectionFour>
-          <RoundContainer height={"200px"} top={"6%"} left={"20%"} />
-          <RoundContainer height={"150px"} top={"18%"} left={"80%"} />
+          <Wave>
+            <RoundContainer height={"200px"} top={"6%"} left={"20%"} />
+            <RoundContainer height={"150px"} top={"18%"} left={"80%"} />
+          </Wave>
+          <SectionFourContainer>
+            <SectionFourContent>
+              {/* <LeftItem>
+                <ul style={{ position: "relative" }}>
+                  <List>
+                    <StaticRoundContainer height={"180px"} />{" "}
+                    <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                  </List>
 
-          <SectionFourContent>
-            <LeftItem>
-              <ul>
-                <List>
-                  <StaticRoundContainer height={"100px"} />{" "}
-                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
-                </List>
+                  <List>
+                    <StaticRoundContainer height={"150px"} />{" "}
+                    <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                  </List>
 
-                <List>
-                  <StaticRoundContainer height={"100px"} />{" "}
-                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
-                </List>
+                  <List>
+                    <StaticRoundContainer height={"130px"} />{" "}
+                    <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                  </List>
 
-                <List>
-                  <StaticRoundContainer height={"100px"} />{" "}
-                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
-                </List>
+                  <List>
+                    <StaticRoundContainer height={"110px"} />{" "}
+                    <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                  </List>
 
-                <List>
-                  <StaticRoundContainer height={"100px"} />{" "}
-                  <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
-                </List>
-              </ul>
-            </LeftItem>
+                  <List>
+                    <StaticRoundContainer height={"100px"} />{" "}
+                    <p style={{ paddingLeft: "10px" }}>hello there</p>{" "}
+                  </List>
+                </ul>
+              </LeftItem> */}
 
-            <RightItem></RightItem>
-          </SectionFourContent>
+              <RightItem></RightItem>
+            </SectionFourContent>
+          </SectionFourContainer>
         </SectionFour>
       </Main>
     </Responsive>
