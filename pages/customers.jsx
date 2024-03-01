@@ -352,14 +352,14 @@ const customers = () => {
                   <CarouselTextDiv>
                     <CarouselLogo>logo</CarouselLogo>
                     <Texts style={{ fontSize: " calc(12px + 1vw)" }}>
-                      "This [in-person interview] process is not possible for us
+                      This [in-person interview] process is not possible for us
                       right now due to the [COVID-19] crisis. This tool has
                       helped us be more efficient during this time and get our
-                      jobs done. Thank you!"
+                      jobs done. Thank you!
                     </Texts>
                     <CarouselCourtesy>
                       <CarouselCourtesyImage>
-                        <img src="" alt="" />
+                        <Image src="" alt="" height="" width="" />
                       </CarouselCourtesyImage>
 
                       <CarouselCourtesyText>

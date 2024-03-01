@@ -8,12 +8,16 @@ import CardOne from "./components/LandingPageUtils/CardOne";
 import CardTwo from "./components/LandingPageUtils/CardTwo";
 import CardThree from "./components/LandingPageUtils/CardThree";
 import Footer from "./components/Footer";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Body = styled.div`
   max-width: 100%;
   margin: auto;
+  position: relative;
 `;
-const SectionOne = styled.div`
+
+const SectionOne = styled.section`
   width: 100%;
   min-height: 100%;
   background-color: var(--primary-color);
@@ -81,7 +85,7 @@ const CustomButton = styled(Button)`
 
 //second section
 
-const SecondSection = styled.div`
+const SecondSection = styled.section`
   width: 100%;
 
   background-color: #ffffff;
@@ -138,7 +142,97 @@ const LearnMore = styled(Link)`
   }
 `;
 
+//Section three
+
+const SectionThree = styled.section`
+  width: 100%;
+`;
+
+const WaveDesign = styled.div`
+  height: 80vh;
+  background-image: url(wave2.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+`;
+
+const ContentContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--primary-content);
+
+  @media (max-width: 767px) {
+    grid-template-columns: 100%;
+  }
+
+  @media (min-width: 767px) {
+    grid-template-columns: 100%;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+const LeftContentBox = styled.div`
+  /* background-image: url(worldMap.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; */
+  transform: translate(0, -5%);
+`;
+const RightContentBox = styled.div`
+  justify-self: start;
+  color: #ffffff;
+
+  transform: translate(0, -20%);
+`;
+
+const BottomContainer = styled.div`
+  width: 90%;
+  margin: auto;
+  padding-bottom: 60px;
+
+  @media (min-width: 1200px) {
+    grid-column: 1/3;
+  }
+`;
+
+const CarouselConatiner = styled.div`
+  width: 100%;
+  height: 80vh;
+  background-color: #e8e8e8;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+`;
+const CarouselLeft = styled.div`
+  height: inherit;
+  width: 50%;
+  background-color: #7f7f7f;
+`;
+const CarouselRight = styled.div`
+  height: inherit;
+  width: 50%;
+  background-color: #9a5f5f;
+`;
+
+const Testimonial = styled.div`
+  height: 20vh;
+  background-color: #4b2323;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 0 20px black;
+`;
+
+const SectionFour = styled.section`
+  height: 100vh;
+  width: 100%;
+  background-color: #b0c0cf;
+`;
+
 const landingPage = () => {
+  const array = [1, 2, 3];
+
   return (
     <Body>
       {/* //sectionOne */}
@@ -383,6 +477,86 @@ const landingPage = () => {
           </TextContainer>
         </SecondSectionGrid>
       </SecondSection>
+
+      {/* SectionThree */}
+      <SectionThree>
+        <WaveDesign />
+        <ContentContainer>
+          <LeftContentBox>
+            <Image
+              src="/worldMap.png"
+              alt="img"
+              height={400}
+              width={590}
+              style={{ marginBottom: "80px" }}
+            />
+          </LeftContentBox>
+
+          <RightContentBox>
+            <Typography sx={{ fontSize: "46px", fontWeight: "700" }}>
+              Where great companies <br />
+              hire great people
+            </Typography>
+
+            <Typography sx={{ fontSize: "20px" }}>
+              Since 2012, the world’s best companies have depended on Workable
+              to find and hire the people they depend on.
+            </Typography>
+
+            <Box sx={{ marginTop: "20px" }}>
+              <Typography
+                sx={{ fontWeight: "700", fontSize: "46px", lineHeight: "0.8" }}
+              >
+                27,000
+              </Typography>
+              <Typography sx={{ fontWeight: "800" }}>COMPANIES</Typography>
+            </Box>
+
+            <Box sx={{ marginTop: "20px" }}>
+              <Typography
+                sx={{ fontWeight: "700", fontSize: "46px", lineHeight: "0.8" }}
+              >
+                1,500,000
+              </Typography>
+              <Typography sx={{ fontWeight: "800" }}>HIRES</Typography>
+            </Box>
+
+            <Box sx={{ marginTop: "20px" }}>
+              <Typography
+                sx={{ fontWeight: "700", fontSize: "46px", lineHeight: "0.8" }}
+              >
+                160,000,000
+              </Typography>
+              <Typography sx={{ fontWeight: "800" }}>CANDIDATES</Typography>
+            </Box>
+          </RightContentBox>
+
+          <BottomContainer>
+            <Carousel>
+              {array.map((data, index) => (
+                <>
+                  <CarouselConatiner>
+                    <CarouselLeft>{data}</CarouselLeft>
+                    <CarouselRight>{data}</CarouselRight>
+                  </CarouselConatiner>
+                  <Testimonial>static text</Testimonial>
+                </>
+              ))}
+            </Carousel>
+          </BottomContainer>
+        </ContentContainer>
+      </SectionThree>
+
+      {/* section four */}
+
+      <SectionFour>
+        <TextWrapper>
+          <Typography sx={{ fontSize: "46px", fontWeight: "700" }}>
+            More reasons companies around <br />
+            the world choose Workable
+          </Typography>
+        </TextWrapper>
+      </SectionFour>
       <Footer />
     </Body>
   );

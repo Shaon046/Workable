@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "@mui/material/Button";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Footer from "./components/Footer";
-import PricingGrid from "./components/pricingPage/PricingGrid";
+import PricingGrid from "./components/pricingPageUtils/PricingGrid";
 import ScreenSizeComponent from './components/SreenSize'
 
 const Main = styled.div`
