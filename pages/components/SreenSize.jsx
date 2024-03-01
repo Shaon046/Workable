@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
@@ -14,13 +14,12 @@ function useWindowSize() {
       });
     }
 
-    handleResize(); 
+    handleResize();
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []); 
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return windowSize;
 }
@@ -28,7 +27,7 @@ function useWindowSize() {
 function ScreenSizeComponent() {
   const { width, height } = useWindowSize();
 
-  return({height:height,width:width})
+  return { height: height, width: width };
 }
 
 export default ScreenSizeComponent;

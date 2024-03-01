@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Footer from "./components/Footer";
 import PricingGrid from "./components/pricingPageUtils/PricingGrid";
-import ScreenSizeComponent from './components/SreenSize'
+import ScreenSizeComponent from "./components/SreenSize";
 
 const Main = styled.div`
   width: 100%;
@@ -53,7 +53,6 @@ const PrimaryButton = styled(Button)`
   }
 `;
 
-
 const Sectionthree = styled.div`
   margin-top: 300px;
   height: 325px;
@@ -71,8 +70,6 @@ const List = styled.li`
   list-style: none;
   margin-top: 2px;
 `;
-
-
 
 const Review = styled.div`
   margin-top: 200px;
@@ -117,12 +114,8 @@ const deepGray = "var(--gray-deep)";
 const centerText = { display: "flex", alignItems: "center" };
 
 const pricing = () => {
-
-
   return (
     <Main>
-
-
       <SectionOne>
         <Texts fontSize={"46px"} style={{ fontWeight: "900" }}>
           Feature-rich plans with upfront pricing
@@ -145,11 +138,7 @@ const pricing = () => {
       {/* 
 //////design */}
 
-     
-
-    <PricingGrid/>
-
-      
+      <PricingGrid />
 
       <Sectionthree>
         <Texts

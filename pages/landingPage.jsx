@@ -130,6 +130,7 @@ const TextContainer = styled.div`
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
+  color: var(--primary-content);
 `;
 
 const LearnMore = styled(Link)`
@@ -193,7 +194,7 @@ const BottomContainer = styled.div`
   width: 90%;
   margin: auto;
   padding-bottom: 60px;
-
+  border-radius: 6px;
   @media (min-width: 1200px) {
     grid-column: 1/3;
   }
@@ -202,36 +203,118 @@ const BottomContainer = styled.div`
 const CarouselConatiner = styled.div`
   width: 100%;
   height: 80vh;
-  background-color: #e8e8e8;
+  background-color: #ffffff;
   border-radius: 6px 6px 0 0;
   display: flex;
 `;
 const CarouselLeft = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   height: inherit;
   width: 50%;
-  background-color: #7f7f7f;
 `;
 const CarouselRight = styled.div`
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
   height: inherit;
   width: 50%;
-  background-color: #9a5f5f;
+  padding: 20px;
 `;
 
 const Testimonial = styled.div`
   height: 20vh;
-  background-color: #4b2323;
+  background-color: #dddddd;
   border-radius: 0 0 6px 6px;
-  box-shadow: 0 0 20px black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  box-shadow: 0 0 0 0/0 0 0 0/ 0 0 20px black/0 0 0 0;
+  transform: translate(0, -36%);
+`;
+
+const TestimonialIcon = styled.div`
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9a9a9a;
 `;
 
 const SectionFour = styled.section`
-  height: 100vh;
   width: 100%;
-  background-color: #b0c0cf;
+`;
+
+const SectionFourGridContainer = styled.div`
+  display: grid;
+  padding-bottom: 50px;
+  @media (max-width: 767px) {
+    grid-template-columns: 100%;
+  }
+  @media (min-width: 767px) {
+    grid-template-columns: 100%;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
+const GridItems = styled.div`
+  height: 300px;
+
+  padding: 20px 60px 20px 60px;
+`;
+
+const Icon = styled.div`
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: #bfc2c4;
+`;
+
+const CustomButtonTwo = styled(Button)`
+  background-color: var(--primary-color);
+  color: #ffffff;
+
+  &:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 20px gray;
+  }
+`;
+
+const CarouselCourtesy = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 10px;
+`;
+const CarouselCourtesyImage = styled.div`
+  border: 2px solid #22bfd3;
+  padding: 5px;
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+`;
+
+const CarouselCourtesyText = styled.div`
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 `;
 
 const landingPage = () => {
   const array = [1, 2, 3];
+  const array2 = [1, 2, 3, 4, 5, 6];
 
   return (
     <Body>
@@ -532,17 +615,51 @@ const landingPage = () => {
           </RightContentBox>
 
           <BottomContainer>
-            <Carousel>
+            <Carousel autoPlay={true} infiniteLoop={true} showStatus={false}>
               {array.map((data, index) => (
                 <>
                   <CarouselConatiner>
-                    <CarouselLeft>{data}</CarouselLeft>
-                    <CarouselRight>{data}</CarouselRight>
+                    <CarouselLeft>
+                      <TextWrapper>
+                        <Typography
+                          sx={{
+                            fontSize: "46px",
+                            fontWeight: "700",
+                            lineHeight: "1",
+                            color: "#4d52b1",
+                          }}
+                        >
+                          JOEY Restaurants cuts agency spend by 75%
+                        </Typography>
+                      </TextWrapper>
+                    </CarouselLeft>
+
+                    <CarouselRight>
+                      <Typography sx={{ fontSize: "24px", lineHeight: "1" }}>
+                        {`JOEY Restaurants cuts agency spend by 75% "With the
+                        insights we can gather using Workable, we’re able to
+                        reduce our dependence on external recruitment agencies
+                        to just one or two specialty roles a year."`}
+                      </Typography>
+                      <CarouselCourtesy>
+                        <CarouselCourtesyImage>
+                          <Image src="" alt="" height="" width="" />
+                        </CarouselCourtesyImage>
+
+                        <CarouselCourtesyText>
+                          <p>name and tile </p> <p>position</p>
+                        </CarouselCourtesyText>
+                      </CarouselCourtesy>
+                    </CarouselRight>
                   </CarouselConatiner>
-                  <Testimonial>static text</Testimonial>
                 </>
               ))}
             </Carousel>
+            <Testimonial>
+              {array2.map((data, idx) => (
+                <TestimonialIcon key={idx}>icon</TestimonialIcon>
+              ))}
+            </Testimonial>
           </BottomContainer>
         </ContentContainer>
       </SectionThree>
@@ -556,7 +673,53 @@ const landingPage = () => {
             the world choose Workable
           </Typography>
         </TextWrapper>
+
+        <SectionFourGridContainer>
+          {array2.map((data, idx) => (
+            <GridItems key={idx}>
+              <TextContainer>
+                <Icon>icon</Icon>
+                <Typography
+                  sx={{
+                    fontSize: "20px",
+                    fontWeight: "700",
+                    marginBottom: "30px",
+                  }}
+                >
+                  World-class partners
+                </Typography>
+                <Typography sx={{ fontSize: "20px" }}>
+                  Connect with LinkedIn, Google and 70+ other apps and tools to
+                  get more done.
+                </Typography>
+              </TextContainer>
+            </GridItems>
+          ))}
+        </SectionFourGridContainer>
+
+        <TextWrapper>
+          <Typography
+            sx={{
+              fontSize: "46px",
+              fontWeight: "700",
+              color: "var(--primary-color)",
+            }}
+          >
+            Let’s grow together
+          </Typography>
+        </TextWrapper>
+        <TextWrapper>
+          <Typography sx={{ fontSize: "20px" }}>
+            Explore our full platform with a 15-day free trial. <br />
+            Post jobs, get candidates and onboard employees all in one place.
+          </Typography>
+        </TextWrapper>
+
+        <TextWrapper>
+          <CustomButtonTwo>Start a free trial</CustomButtonTwo>
+        </TextWrapper>
       </SectionFour>
+
       <Footer />
     </Body>
   );
