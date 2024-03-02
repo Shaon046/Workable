@@ -298,15 +298,7 @@ const ContentContainer = styled.div`
   @media (min-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
   }
-
-
-  
 `;
-
-
-
-
-
 
 const LeftContentBox = styled.div`
   /* background-image: url(worldMap.png);
@@ -338,41 +330,31 @@ const CarouselConatiner = styled.div`
   border-radius: 6px 6px 0 0;
   display: flex;
 
+  @media (max-width: 599px) {
+    flex-direction: column;
 
-
-  @media (max-width: 599px) { 
-   flex-direction: column;
-  
-  align-items: center;
+    align-items: center;
+    padding: 20px;
   }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  flex-direction: column;
-  
-  align-items: center;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    flex-direction: column;
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  height: 80vh;
-}
+    align-items: center;
+    padding: 20px;
+  }
 
-@media (min-width: 1280px) and (max-width: 1919px) { 
-  height: 80vh;
-}
+  @media (min-width: 960px) and (max-width: 1279px) {
+    height: 80vh;
+  }
 
-@media (min-width: 1920px) { 
-  height: 80vh;
-}
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    height: 80vh;
+  }
 
-
-
-
-
-
-
-
-
-
+  @media (min-width: 1920px) {
+    height: 80vh;
+  }
 `;
 const CarouselLeft = styled.div`
   display: flex;
@@ -445,64 +427,51 @@ const Icon = styled.div`
   background-color: #bfc2c4;
 `;
 
-const GridHeader=styled(Typography)`
+const GridHeader = styled(Typography)`
+  @media (max-width: 599px) {
+    font-size: var(--font-l);
+  }
 
+  @media (min-width: 600px) and (max-width: 959px) {
+    font-size: var(--font-l);
+  }
 
+  @media (min-width: 960px) and (max-width: 1279px) {
+    font-size: var(--font-xl);
+  }
 
-  @media (max-width: 599px) { 
-   font-size : var(--font-l);
-}
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    font-size: var(--font-xxl);
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  font-size : var(--font-l);
-}
+  @media (min-width: 1920px) {
+    font-size: var(--font-xxl);
+  }
+`;
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  font-size : var(--font-xl);
-}
+const GridContentText = styled(Typography)`
+  line-height: 1;
 
-@media (min-width: 1280px) and (max-width: 1919px) { 
-  font-size : var(--font-xxl);
-}
+  @media (max-width: 599px) {
+    font-size: var(--font-s);
+  }
 
-@media (min-width: 1920px) { 
-  font-size : var(--font-xxl);
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    font-size: var(--font-m-2);
+  }
 
-`
+  @media (min-width: 960px) and (max-width: 1279px) {
+    font-size: var(--font-l);
+  }
 
-const GridContentText=styled(Typography)`
-  line-height: 1 ;
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    font-size: var(--font-l);
+  }
 
-    @media (max-width: 599px) { 
-      font-size: var(--font-s);
-   
-}
-
-@media (min-width: 600px) and (max-width: 959px) { 
-  font-size: var(--font-m-2);
-   
-}
-
-@media (min-width: 960px) and (max-width: 1279px) { 
-  font-size: var(--font-l);
-    
-}
-
-@media (min-width: 1280px) and (max-width: 1919px) { 
-  font-size: var(--font-l);
-    
-}
-
-@media (min-width: 1920px) { 
-  font-size: var(--font-l);
-    
-}
-
-
-
-    
-`
+  @media (min-width: 1920px) {
+    font-size: var(--font-l);
+  }
+`;
 const CustomButtonTwo = styled(Button)`
   background-color: var(--primary-color);
   color: #ffffff;
@@ -873,7 +842,6 @@ const landingPage = () => {
                       <TextWrapper>
                         <GridHeader
                           sx={{
-                           
                             fontWeight: "700",
                             lineHeight: "1",
                             color: "#4d52b1",
@@ -885,14 +853,12 @@ const landingPage = () => {
                     </CarouselLeft>
 
                     <CarouselRight>
-                      < GridContentText
-                        
-                      >
+                      <GridContentText>
                         {`JOEY Restaurants cuts agency spend by 75% "With the
                         insights we can gather using Workable, we’re able to
                         reduce our dependence on external recruitment agencies
                         to just one or two specialty roles a year."`}
-                      </ GridContentText>
+                      </GridContentText>
                       <CarouselCourtesy>
                         <CarouselCourtesyImage>
                           <Image
@@ -966,14 +932,14 @@ const landingPage = () => {
             Let’s grow together
           </Typography>
         </TextWrapper>
-        <TextWrapper style={{ textAlign: 'center'}}>
+        <TextWrapper style={{ textAlign: "center" }}>
           <Typography sx={{ fontSize: "var(--font-l)" }}>
             Explore our full platform with a 15-day free trial. <br />
             Post jobs, get candidates and onboard employees all in one place.
           </Typography>
         </TextWrapper>
 
-        <TextWrapper style={{padding:"40px"}}>
+        <TextWrapper style={{ padding: "40px" }}>
           <CustomButtonTwo>Start a free trial</CustomButtonTwo>
         </TextWrapper>
       </SectionFour>
