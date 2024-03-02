@@ -30,6 +30,7 @@ const List = styled.li`
   list-style: none;
   margin-top: 20px;
   cursor: pointer;
+
   &:hover {
     color: #ababab;
   }
@@ -38,27 +39,53 @@ const List = styled.li`
 const FooterGrid = styled.div`
   display: grid;
   color: #ffffff;
+  padding: 20px 20px 80px 20px;
 
-  padding-top: 20px;
-  padding-bottom: 50px;
-
-  align-items: center;
-
-  @media (max-width: 767px) {
+  @media (max-width: 599px) {
     grid-template-columns: 100%;
-    justify-items: start;
-    padding: 30px;
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 600px) and (max-width: 959px) {
     grid-template-columns: 100%;
-    justify-items: start;
-    padding: 30px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 960px) and (max-width: 1279px) {
     grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    :nth-child(1),
+    :nth-child(2) {
+      justify-self: start;
+    }
+
+    :nth-child(3),
+    :nth-child(4) {
+      justify-self: end;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    grid-template-columns: repeat(4, 1fr);
+    :nth-child(1),
+    :nth-child(2) {
+      justify-self: start;
+    }
+
+    :nth-child(3),
+    :nth-child(4) {
+      justify-self: end;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(4, 1fr);
+    :nth-child(1),
+    :nth-child(2) {
+      justify-self: start;
+    }
+
+    :nth-child(3),
+    :nth-child(4) {
+      justify-self: end;
+    }
   }
 `;
 
@@ -86,65 +113,94 @@ const IconWrapper = styled.div`
   }
 `;
 const Footer = () => {
-  const footerArray = [
-    "Job board distribution (200+)",
-    "AI candidate sourcing",
-    "Careers page builder",
-    "Native language options",
-    "Referrals portal with reporting",
-    "Custom application forms",
-    "LinkedIn Recruiter System Connect",
-    "Social media campaigns",
-    "Job board distribution (200+)",
-    "AI candidate sourcing",
-    "Social media campaigns",
+  const footerone = [
+    "User",
+    "Source & attract",
+    "Evaluate & collaborate",
+    "Automate & hire",
+    "Onboard & manage",
+    "Reduce time to hire",
+    "Modernize the candidate experience",
+    "Improve DEI",
+    "Ensure compliance",
+  ];
+
+  const footertwo = [
+    "Pricing",
+    "Why Workable",
+    "Post a job for free",
+    "Help center",
+    "Partners & integrations",
+    "Become a partner",
+    "Developer API",
+    "Security",
+    "Real-time customer satisfaction",
+  ];
+
+  const footerthree = [
+    "Job descriptions",
+    "Applicant tracking",
+    "Interview questions",
+    "Hiring resources",
+    "Hiring templates",
+    "Hiring tutorials",
+    "Free Tools for Managers",
+  ];
+
+  const footerfour = [
+    "Work with us",
+    "Backstage",
+    "Press",
+    "Contact us",
+    "About",
   ];
 
   return (
     <Container>
       <FooterGrid>
         <ListWrapper>
-          <p style={{ fontWeight: 900, fontSize: "18px", margin: "15px" }}>
-            HEADING
+          <p style={{ fontWeight: 900, fontSize: "18px", marginTop: "15px" }}>
+            PRODUCT
           </p>
 
           <ul>
-            {footerArray.map((data, idx) => (
+            {footerone.map((data, idx) => (
               <List key={idx}>{data}</List>
             ))}
           </ul>
         </ListWrapper>
 
         <ListWrapper>
-          <p style={{ fontWeight: 900, fontSize: "18px", margin: "15px" }}>
-            HEADING
+          <p style={{ fontWeight: 900, fontSize: "18px", marginTop: "15px" }}>
+            PLATFORM
           </p>
 
           <ul>
-            {footerArray.map((data, idx) => (
+            {footertwo.map((data, idx) => (
               <List key={idx}>{data}</List>
             ))}
           </ul>
         </ListWrapper>
 
         <ListWrapper>
-          <p style={{ fontWeight: 900, fontSize: "18px", margin: "15px" }}>
-            HEADING
+          <p style={{ fontWeight: 900, fontSize: "18px", marginTop: "15px" }}>
+            EMPLOYER RESOURCES
           </p>
 
           <ul>
-            {footerArray.map((data, idx) => (
+            {footerthree.map((data, idx) => (
               <List key={idx}>{data}</List>
             ))}
           </ul>
         </ListWrapper>
+
         <ListWrapper>
-          <p style={{ fontWeight: 900, fontSize: "18px", margin: "15px" }}>
-            HEADING
+          <p style={{ fontWeight: 900, fontSize: "18px", marginTop: "15px" }}>
+            WORKABLE
           </p>
 
           <ul>
-            {footerArray.map((data, idx) => (
+            {footerfour.map((data, idx) => (
               <List key={idx}>{data}</List>
             ))}
           </ul>
@@ -180,10 +236,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-
-
-

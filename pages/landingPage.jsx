@@ -45,7 +45,6 @@ const SectionOne = styled.section`
 `;
 
 const SectionOneContainer = styled.div`
-
   display: grid;
 
   @media (max-width: 599px) {
@@ -68,7 +67,7 @@ const SectionOneContainer = styled.div`
 
   @media (min-width: 1920px) {
     grid-template-columns: 40% 60%;
-  min-height: 100vh;
+    min-height: 100vh;
   }
 `;
 
@@ -99,7 +98,7 @@ const CustomLink = styled(Link)`
   }
 
   & .MuiSvgIcon-root {
-    font-size: 18px;
+    font-size: var(--font-m2);
     color: #00b7cd;
     margin-right: 5px;
     text-align: center;
@@ -130,31 +129,29 @@ const TextWrapper = styled.div`
   color: var(--primary-content);
   margin: auto;
 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     padding: 5x;
-}
-@media (min-width: 600px) and (max-width: 959px) { 
-  padding: 10px;
-}
-@media (min-width: 960px) and (max-width: 1279px) { 
-  text-align: center;
-  padding: 15px;
-}
+  }
+  @media (min-width: 600px) and (max-width: 959px) {
+    padding: 10px;
+  }
+  @media (min-width: 960px) and (max-width: 1279px) {
+    text-align: center;
+    padding: 15px;
+  }
 
-@media (min-width: 1280px) and (max-width: 1919px) { 
-  text-align: center;
-  padding: 20px;
-}
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    text-align: center;
+    padding: 20px;
+  }
 
-@media (min-width: 1920px) { 
-  text-align: center;
-  padding: 20px;
-}
-
+  @media (min-width: 1920px) {
+    text-align: center;
+    padding: 20px;
+  }
 `;
 
 const Heading = styled.div`
-
   @media (max-width: 599px) {
     margin-top: 50px;
   }
@@ -180,73 +177,70 @@ const Heading = styled.div`
   }
 `;
 
-
 const SecondSectionGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  
+
   margin-top: 5px;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     grid-template-columns: 100%;
     padding: 5px;
-}
-@media (min-width: 600px) and (max-width: 959px) { 
-  grid-template-columns: 100%;
-  padding: 10px;
-}
+  }
+  @media (min-width: 600px) and (max-width: 959px) {
+    grid-template-columns: 100%;
+    padding: 10px;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 960px) and (max-width: 1279px) {
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 25px;
-}
+  }
 
-@media (min-width: 1280px) and (max-width: 1919px) { 
-  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 30px;
-}
+  }
 
-@media (min-width: 1920px) { 
-  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 30px;
-}
-
+  }
 `;
 
 const TextContainer = styled.div`
   text-align: center;
   color: var(--primary-content);
 
-@media (max-width: 599px) { 
-     margin-bottom: 50px;
-}
+  @media (max-width: 599px) {
+    margin-bottom: 50px;
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  margin-bottom: 50px;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    margin-bottom: 50px;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-    /* CSS rules for medium devices */ 
-}
+  @media (min-width: 960px) and (max-width: 1279px) {
+    /* CSS rules for medium devices */
+  }
 
-@media (min-width: 1280px) and (max-width: 1919px) { 
-    /* CSS rules for large devices */ 
-}
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    /* CSS rules for large devices */
+  }
 
-@media (min-width: 1920px) { 
-    /* CSS rules for extra-large devices */ 
-}
-
+  @media (min-width: 1920px) {
+    /* CSS rules for extra-large devices */
+  }
 `;
 
 const LearnMore = styled(Link)`
-  font-size: 12px;
+  font-size: var(--font-xs);
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
@@ -268,27 +262,23 @@ const WaveDesign = styled.div`
   background-position: bottom;
   background-size: contain;
 
- 
   @media (max-width: 599px) {
-    
-    height: 203px;}
+    height: 203px;
+  }
   @media (min-width: 600px) and (max-width: 959px) {
-height: 326px;}
+    height: 326px;
+  }
   @media (min-width: 960px) and (max-width: 1279px) {
-    background-size: cover; 
+    background-size: cover;
     height: 435px;
   }
-@media (min-width: 1280px) and (max-width: 1919px) { 
-    height : 652px;
-}
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    height: 652px;
+  }
 
-@media (min-width: 1920px) { 
-  height : 652px;
-}
-
-
-
-
+  @media (min-width: 1920px) {
+    height: 652px;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -458,14 +448,18 @@ const landingPage = () => {
         <SectionOneContainer>
           <LeftGrid>
             <Typography
-              sx={{ fontSize: "20px", fontWeight: "800", color: "#ffe6ae" }}
+              sx={{
+                fontSize: "var(--font-m-2)",
+                fontWeight: "800",
+                color: "#ffe6ae",
+              }}
             >
               HIRING PLATFORM | HR SOFTWARE
             </Typography>
 
             <Typography
               sx={{
-                fontSize: "46px",
+                fontSize: "var(--font-xxl)",
                 fontWeight: "700 ",
                 lineHeight: "1",
                 color: "#ffffff",
@@ -476,7 +470,11 @@ const landingPage = () => {
             </Typography>
 
             <Typography
-              sx={{ fontSize: "24px", color: "#ffffff", marginTop: "30px" }}
+              sx={{
+                fontSize: "var(--font-l)",
+                color: "#ffffff",
+                marginTop: "30px",
+              }}
             >
               Find, hire, onboard, and manage the right person for every job.
             </Typography>
@@ -486,7 +484,9 @@ const landingPage = () => {
             >
               <CustomLink href="">
                 <PlayCircleFilledWhiteIcon />{" "}
-                <Typography sx={{ fontSize: "12px", fontWeight: "800" }}>
+                <Typography
+                  sx={{ fontSize: "var(--font-xs)", fontWeight: "800" }}
+                >
                   SEE WORKABLE IN ACTION
                 </Typography>
               </CustomLink>
@@ -514,8 +514,7 @@ const landingPage = () => {
           <Heading>
             <Typography
               sx={{
-               
-                fontSize: "48px",
+                fontSize: "var(--font-xxl)",
                 fontWeight: "700",
                 lineHeight: "1.3",
               }}
@@ -539,7 +538,7 @@ const landingPage = () => {
           <TextContainer>
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 fontWeight: "800",
                 color: "#ff5e16",
                 margin: "10px",
@@ -549,7 +548,7 @@ const landingPage = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: "32px",
+                fontSize: "var(--font-xl)",
                 fontWeight: "700",
                 color: "#4e4646",
                 lineHeight: "1",
@@ -561,7 +560,7 @@ const landingPage = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 color: "#4e4646",
                 lineHeight: "1",
                 margin: "20px",
@@ -578,7 +577,7 @@ const landingPage = () => {
           <TextContainer>
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 fontWeight: "800",
                 color: "#4385e0",
                 margin: "10px",
@@ -588,7 +587,7 @@ const landingPage = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: "32px",
+                fontSize: "var(--font-xl)",
                 fontWeight: "700",
                 color: "#4e4646",
                 lineHeight: "1",
@@ -600,7 +599,7 @@ const landingPage = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 color: "#4e4646",
                 lineHeight: "1",
                 margin: "20px",
@@ -623,7 +622,7 @@ const landingPage = () => {
           <TextContainer>
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 fontWeight: "800",
                 color: "#00b7cd",
                 margin: "10px",
@@ -633,7 +632,7 @@ const landingPage = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: "32px",
+                fontSize: "var(--font-xl)",
                 fontWeight: "700",
                 color: "#4e4646",
                 lineHeight: "1",
@@ -645,7 +644,7 @@ const landingPage = () => {
 
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 color: "#4e4646",
                 lineHeight: "1",
                 margin: "20px",
@@ -661,7 +660,7 @@ const landingPage = () => {
           <TextContainer>
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 fontWeight: "800",
                 color: "#4d52b1",
                 margin: "10px",
@@ -672,7 +671,7 @@ const landingPage = () => {
 
             <Typography
               sx={{
-                fontSize: "32px",
+                fontSize: "var(--font-xl)",
                 fontWeight: "700",
                 color: "#4e4646",
                 lineHeight: "1",
@@ -684,7 +683,7 @@ const landingPage = () => {
             </Typography>
             <Typography
               sx={{
-                fontSize: "20px",
+                fontSize: "var(--font-l)",
                 color: "#4e4646",
                 lineHeight: "1",
                 margin: "20px",
@@ -701,7 +700,7 @@ const landingPage = () => {
 
       {/* SectionThree */}
 
-       <SectionThree>
+      <SectionThree>
         <WaveDesign />
         <ContentContainer>
           <LeftContentBox>
@@ -710,25 +709,28 @@ const landingPage = () => {
               alt="img"
               height={400}
               width={590}
-              style={{ marginBottom: "80px",maxWidth: "100%", height: "auto" }}
-             
+              style={{ marginBottom: "80px", maxWidth: "100%", height: "auto" }}
             />
           </LeftContentBox>
 
           <RightContentBox>
-            <Typography sx={{ fontSize: "46px", fontWeight: "700" }}>
+            <Typography sx={{ fontSize: "var(--font-l)", fontWeight: "700" }}>
               Where great companies <br />
               hire great people
             </Typography>
 
-            <Typography sx={{ fontSize: "20px" }}>
+            <Typography sx={{ fontSize: "var(--font-l)" }}>
               Since 2012, the world’s best companies have depended on Workable
               to find and hire the people they depend on.
             </Typography>
 
             <Box sx={{ marginTop: "20px" }}>
               <Typography
-                sx={{ fontWeight: "700", fontSize: "46px", lineHeight: "0.8" }}
+                sx={{
+                  fontWeight: "700",
+                  fontSize: "var(--font-l)",
+                  lineHeight: "0.8",
+                }}
               >
                 27,000
               </Typography>
@@ -737,7 +739,11 @@ const landingPage = () => {
 
             <Box sx={{ marginTop: "20px" }}>
               <Typography
-                sx={{ fontWeight: "700", fontSize: "46px", lineHeight: "0.8" }}
+                sx={{
+                  fontWeight: "700",
+                  fontSize: "var(--font-l)",
+                  lineHeight: "0.8",
+                }}
               >
                 1,500,000
               </Typography>
@@ -746,7 +752,11 @@ const landingPage = () => {
 
             <Box sx={{ marginTop: "20px" }}>
               <Typography
-                sx={{ fontWeight: "700", fontSize: "46px", lineHeight: "0.8" }}
+                sx={{
+                  fontWeight: "700",
+                  fontSize: "var(--font-xxl)",
+                  lineHeight: "0.8",
+                }}
               >
                 160,000,000
               </Typography>
@@ -763,7 +773,7 @@ const landingPage = () => {
                       <TextWrapper>
                         <Typography
                           sx={{
-                            fontSize: "46px",
+                            fontSize: "var(--font-xxl)",
                             fontWeight: "700",
                             lineHeight: "1",
                             color: "#4d52b1",
@@ -775,7 +785,9 @@ const landingPage = () => {
                     </CarouselLeft>
 
                     <CarouselRight>
-                      <Typography sx={{ fontSize: "24px", lineHeight: "1" }}>
+                      <Typography
+                        sx={{ fontSize: "var(--font-l)", lineHeight: "1" }}
+                      >
                         {`JOEY Restaurants cuts agency spend by 75% "With the
                         insights we can gather using Workable, we’re able to
                         reduce our dependence on external recruitment agencies
@@ -783,7 +795,13 @@ const landingPage = () => {
                       </Typography>
                       <CarouselCourtesy>
                         <CarouselCourtesyImage>
-                          <Image src="" alt="" height="" width="" style={{ maxWidth: "100%", height: "auto" }}/>
+                          <Image
+                            src=""
+                            alt=""
+                            height=""
+                            width=""
+                            style={{ maxWidth: "100%", height: "auto" }}
+                          />
                         </CarouselCourtesyImage>
 
                         <CarouselCourtesyText>
@@ -802,13 +820,13 @@ const landingPage = () => {
             </Testimonial>
           </BottomContainer>
         </ContentContainer>
-      </SectionThree> 
+      </SectionThree>
 
       {/* section four */}
 
-      {/* <SectionFour>
+      <SectionFour>
         <TextWrapper>
-          <Typography sx={{ fontSize: "46px", fontWeight: "700" }}>
+          <Typography sx={{ fontSize: "var(--font-xxl)", fontWeight: "700" }}>
             More reasons companies around <br />
             the world choose Workable
           </Typography>
@@ -821,14 +839,14 @@ const landingPage = () => {
                 <Icon>icon</Icon>
                 <Typography
                   sx={{
-                    fontSize: "20px",
+                    fontSize: "var(--font-l)",
                     fontWeight: "700",
                     marginBottom: "30px",
                   }}
                 >
                   World-class partners
                 </Typography>
-                <Typography sx={{ fontSize: "20px" }}>
+                <Typography sx={{ fontSize: "var(--font-l)" }}>
                   Connect with LinkedIn, Google and 70+ other apps and tools to
                   get more done.
                 </Typography>
@@ -840,7 +858,7 @@ const landingPage = () => {
         <TextWrapper>
           <Typography
             sx={{
-              fontSize: "46px",
+              fontSize: "var(--font-xxl)",
               fontWeight: "700",
               color: "var(--primary-color)",
             }}
@@ -849,7 +867,7 @@ const landingPage = () => {
           </Typography>
         </TextWrapper>
         <TextWrapper>
-          <Typography sx={{ fontSize: "20px" }}>
+          <Typography sx={{ fontSize: "var(--font-l)" }}>
             Explore our full platform with a 15-day free trial. <br />
             Post jobs, get candidates and onboard employees all in one place.
           </Typography>
@@ -858,9 +876,9 @@ const landingPage = () => {
         <TextWrapper>
           <CustomButtonTwo>Start a free trial</CustomButtonTwo>
         </TextWrapper>
-      </SectionFour> */}
+      </SectionFour>
 
-      {/* <Footer /> */}
+      <Footer />
     </Body>
   );
 };

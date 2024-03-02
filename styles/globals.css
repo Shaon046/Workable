@@ -10,3 +10,43 @@
   --gray-light: #f2f4f5;
   --gray-deep: #636d77;
 }
+
+/* font */
+
+/* --font-xs: 0.75rem; //12px
+--font-s: 0.87rem; //14px
+
+--font-m-1: 1rem; //16px
+--font-m-2: 1.1rem; //18px
+
+--font-l: 1.25rem; //20px
+--font-xl: 2.25rem; //36px
+--font-xxl: 2.8rem; //46px */
+
+
+
+:root {
+  --font-xs: 0.75rem; 
+  --font-s: 0.87rem; 
+
+  --font-m-1: 1rem; 
+  --font-m-2: 1.1rem;
+
+  --font-l: 1.25rem; 
+  --font-xl: 2.25rem; 
+  --font-xxl: 2.8rem; 
+
+
+  @media screen and (min-width: 320px) {
+    :root {
+      
+      --font-l: 1.12rem; 
+      --font-xl: 1.8rem; 
+      --font-xxl: 2.25rem; 
+    
+    }
+  }
+  
+  
+
+}
