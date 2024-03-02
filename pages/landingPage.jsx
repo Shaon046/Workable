@@ -21,20 +21,48 @@ const SectionOne = styled.section`
   width: 100%;
   min-height: 100%;
   background-color: var(--primary-color);
+
+  @media (max-width: 599px) {
+    max-width: 599px;
+  }
+
+  @media (min-width: 600px) and (max-width: 959px) {
+    min-width: 600px;
+    max-width: 959px;
+  }
+
+  @media (min-width: 960px) and (max-width: 1279px) {
+    /* CSS rules for medium devices */
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    /* CSS rules for large devices */
+  }
+
+  @media (min-width: 1920px) {
+    /* CSS rules for extra-large devices */
+  }
 `;
 
 const SectionOneContainer = styled.div`
   display: grid;
-  grid-template-columns: 40% 60%;
-
-  @media (max-width: 767px) {
+  @media (max-width: 599px) {
     grid-template-columns: 100%;
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 600px) and (max-width: 959px) {
     grid-template-columns: 100%;
   }
-  @media (min-width: 1200px) {
+
+  @media (min-width: 960px) and (max-width: 1279px) {
+    grid-template-columns: 100%;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    grid-template-columns: 40% 60%;
+  }
+
+  @media (min-width: 1920px) {
     grid-template-columns: 40% 60%;
   }
 `;
@@ -87,50 +115,133 @@ const CustomButton = styled(Button)`
 
 const SecondSection = styled.section`
   width: 100%;
-
   background-color: #ffffff;
 `;
+
 const TextWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary-content);
-
-  padding: 20px;
   margin: auto;
 
-  @media (min-width: 1200px) {
-    text-align: center;
+  @media (max-width: 599px) { 
+    padding: 5x;
+}
+@media (min-width: 600px) and (max-width: 959px) { 
+  padding: 10px;
+}
+@media (min-width: 960px) and (max-width: 1279px) { 
+  text-align: center;
+  padding: 15px;
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) { 
+  text-align: center;
+  padding: 20px;
+}
+
+@media (min-width: 1920px) { 
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+
+
+`;
+
+const Heading = styled.div`
+
+  @media (max-width: 599px) {
+    margin-top: 50px;
+  }
+
+  @media (max-width: 599px) {
+    margin-top: 50px;
+  }
+
+  @media (min-width: 600px) and (max-width: 959px) {
+    margin-top: 70px;
+  }
+
+  @media (min-width: 960px) and (max-width: 1279px) {
+    margin-top: 150px;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    margin-top: 130px;
+  }
+
+  @media (min-width: 1920px) {
+    margin-top: 130px;
   }
 `;
+
 
 const SecondSectionGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  padding: 30px;
+  
   margin-top: 5px;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 767px) {
+  @media (max-width: 599px) { 
     grid-template-columns: 100%;
-  }
+    padding: 5px;
+}
+@media (min-width: 600px) and (max-width: 959px) { 
+  grid-template-columns: 100%;
+  padding: 10px;
+}
 
-  @media (min-width: 767px) {
-    grid-template-columns: 100%;
-  }
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: 960px) and (max-width: 1279px) { 
+  grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-  }
+    padding: 25px;
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) { 
+  grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 30px;
+}
+
+@media (min-width: 1920px) { 
+  grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 30px;
+}
+
 `;
 
 const TextContainer = styled.div`
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
   color: var(--primary-content);
+
+@media (max-width: 599px) { 
+     margin-bottom: 50px;
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  margin-bottom: 50px;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+    /* CSS rules for medium devices */ 
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) { 
+    /* CSS rules for large devices */ 
+}
+
+@media (min-width: 1920px) { 
+    /* CSS rules for extra-large devices */ 
+}
+
 `;
 
 const LearnMore = styled(Link)`
@@ -368,26 +479,30 @@ const landingPage = () => {
               height={500}
               alt="image"
               loading="eager"
+              style={{ maxWidth: "100%", height: "auto" }}
             />
           </RightGrid>
         </SectionOneContainer>
       </SectionOne>
 
+      {/* second  */}
       <SecondSection>
         <TextWrapper>
-          <Typography
-            sx={{
-              marginTop: "130px",
-              fontSize: "48px",
-              fontWeight: "700",
-              lineHeight: "1.3",
-            }}
-          >
-            Manage your entire process,
-            <br />
-            from sourcing to employee onboarding <br />
-            and management
-          </Typography>
+          <Heading>
+            <Typography
+              sx={{
+               
+                fontSize: "48px",
+                fontWeight: "700",
+                lineHeight: "1.3",
+              }}
+            >
+              Manage your entire process,
+              <br />
+              from sourcing to employee onboarding <br />
+              and management
+            </Typography>
+          </Heading>
         </TextWrapper>
 
         <SecondSectionGrid>
@@ -562,7 +677,8 @@ const landingPage = () => {
       </SecondSection>
 
       {/* SectionThree */}
-      <SectionThree>
+
+       <SectionThree>
         <WaveDesign />
         <ContentContainer>
           <LeftContentBox>
@@ -662,11 +778,11 @@ const landingPage = () => {
             </Testimonial>
           </BottomContainer>
         </ContentContainer>
-      </SectionThree>
+      </SectionThree> 
 
       {/* section four */}
 
-      <SectionFour>
+      {/* <SectionFour>
         <TextWrapper>
           <Typography sx={{ fontSize: "46px", fontWeight: "700" }}>
             More reasons companies around <br />
@@ -718,9 +834,9 @@ const landingPage = () => {
         <TextWrapper>
           <CustomButtonTwo>Start a free trial</CustomButtonTwo>
         </TextWrapper>
-      </SectionFour>
+      </SectionFour> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </Body>
   );
 };

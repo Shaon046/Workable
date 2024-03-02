@@ -3,14 +3,39 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const Card = styled.div`
-  height: 345px;
-  width: 275px;
   justify-self: center;
   align-self: center;
   border-radius: 6px;
   box-shadow: 0 0 10px gray;
   position: relative;
-  margin-bottom: 50px;
+  ;
+
+  @media (max-width: 599px) {
+    height: 300px;
+    width: 192px;
+    margin: 50px 0
+  }
+
+  @media (min-width: 600px) and (max-width: 959px) {
+    height: 300px;
+    width: 192px;
+    margin: 50px 0
+  }
+
+  @media (min-width: 960px) and (max-width: 1279px) {
+    height: 345px;
+    width: 275px;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    height: 345px;
+    width: 275px;
+  }
+
+  @media (min-width: 1920px) {
+    height: 345px;
+    width: 275px;
+  }
 `;
 const Box1 = styled.div`
   width: 100%;
