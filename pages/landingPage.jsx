@@ -45,7 +45,9 @@ const SectionOne = styled.section`
 `;
 
 const SectionOneContainer = styled.div`
+
   display: grid;
+
   @media (max-width: 599px) {
     grid-template-columns: 100%;
   }
@@ -56,14 +58,17 @@ const SectionOneContainer = styled.div`
 
   @media (min-width: 960px) and (max-width: 1279px) {
     grid-template-columns: 100%;
+    min-height: 100vh;
   }
 
   @media (min-width: 1280px) and (max-width: 1919px) {
     grid-template-columns: 40% 60%;
+    min-height: 100vh;
   }
 
   @media (min-width: 1920px) {
     grid-template-columns: 40% 60%;
+  min-height: 100vh;
   }
 `;
 
@@ -145,10 +150,6 @@ const TextWrapper = styled.div`
   text-align: center;
   padding: 20px;
 }
-
-
-
-
 
 `;
 
@@ -261,11 +262,33 @@ const SectionThree = styled.section`
 `;
 
 const WaveDesign = styled.div`
-  height: 80vh;
-  background-image: url(wave2.svg);
+  height: 490px;
+  background-image: url(Iwave.svg);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
+
+ 
+  @media (max-width: 599px) {
+    
+    height: 203px;}
+  @media (min-width: 600px) and (max-width: 959px) {
+height: 326px;}
+  @media (min-width: 960px) and (max-width: 1279px) {
+    background-size: cover; 
+    height: 435px;
+  }
+@media (min-width: 1280px) and (max-width: 1919px) { 
+    height : 652px;
+}
+
+@media (min-width: 1920px) { 
+  height : 652px;
+}
+
+
+
+
 `;
 
 const ContentContainer = styled.div`
@@ -687,7 +710,8 @@ const landingPage = () => {
               alt="img"
               height={400}
               width={590}
-              style={{ marginBottom: "80px" }}
+              style={{ marginBottom: "80px",maxWidth: "100%", height: "auto" }}
+             
             />
           </LeftContentBox>
 
@@ -759,7 +783,7 @@ const landingPage = () => {
                       </Typography>
                       <CarouselCourtesy>
                         <CarouselCourtesyImage>
-                          <Image src="" alt="" height="" width="" />
+                          <Image src="" alt="" height="" width="" style={{ maxWidth: "100%", height: "auto" }}/>
                         </CarouselCourtesyImage>
 
                         <CarouselCourtesyText>
