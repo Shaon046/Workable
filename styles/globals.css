@@ -17,8 +17,9 @@
 
 --font-m-1: 1rem; //16px
 --font-m-2: 1.1rem; //18px
-
+ 
 --font-l: 1.25rem; //20px
+--font-l-2:1.65rem ;//28px
 --font-xl: 2.25rem; //36px
 --font-xxl: 2.8rem; //46px */
 
@@ -30,14 +31,16 @@
 
   --font-m-1: 1rem; 
   --font-m-2: 1.1rem;
-
-  --font-l: 1.25rem; 
+ 
+  --font-l: 1.25rem;
+  --font-l-2:1.65rem ;
   --font-xl: 2.25rem; 
   --font-xxl: 2.8rem; 
 
 
   @media (max-width: 599px) { 
     --font-l: 1.12rem; 
+    --font-l-2:1.25rem ;
       --font-xl: 1.8rem; 
       --font-xxl: 2.25rem; 
 }
