@@ -1,86 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 
-const Main = styled.div`
-  width: 100%;
-  border-radius: 50% 51% 0% 74% / 6% 1% 10% 10%;
-  background-color: var(--primary-content);
-`;
 
-const Container = styled.div`
-  width: 95%;
-  margin: auto;
 
-  @media (max-width: 767px) {
-    width: 460px;
-    padding-bottom: 0px;
-    transform: translate(0%, 3%);
-  }
-  @media (min-width: 767px) {
-    width: 560px;
-    transform: translate(0%, 3%);padding-bottom: 0px;
-  }
-  @media (min-width: 1200px) {
-    width: 95%;
-    transform: translate(0%, 0%); padding-bottom: 70px;
-    
- 
-  }
-`;
 
-const Section = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 0fr);
-  width: 100%;
-  background-color: white;
-  box-shadow: 1px 1px 10px gray;
-  border-radius: 6px 6px 0 0;
-  margin: auto;
-  z-index: 1;
-
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(1, 1fr);
-    box-shadow: none;
-  }
-
-  @media (min-width: 767px) {
-    grid-template-columns: repeat(1, 1fr);
-
-    box-shadow: none;
-  }
-
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
 
 const GridContainers = styled.div`
   background-color: white;
   margin: 0 10px 0 10px;
-
   border-radius: 6px;
   margin-top: 10px;
 
-  @media (max-width: 767px) {
-    margin-top: 10px;
-    padding: 20px;
+  @media (max-width: 599px) {
+    width: auto;
+    justify-self: center;
+    align-self: center;
+    padding: 40px;
   }
 
-  @media (min-width: 767px) {
-    margin-top: 10px;
-    padding: 20px;
+  @media (min-width: 600px) and (max-width: 959px) {
+    max-width: 600px;
+    justify-self: center;
+    align-self: center;
+    padding: 40px;
   }
 
-  @media (min-width: 1200px) {
-    margin-top: 0;
-    padding: 0;
+  @media (min-width: 960px) and (max-width: 1279px) {
+    justify-self: center;
+    align-self: center;
+    max-width: 600px;
+    padding: 40px;
   }
 `;
 
@@ -88,47 +43,6 @@ const GridBox = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-`;
-
-const Texts = styled.p`
-  color: var(--primary-color);
-  font-size: ${({ fontSize }) => fontSize};
-  margin-top: 20px;
-  text-align: center;
-
-  @media (max-width: 767px) {
-    font-size: ${({ fontSize }) => `calc(${fontSize} - 20%)`};
-  }
-
-  @media (min-width: 767px) {
-    font-size: ${({ fontSize }) => fontSize};
-  }
-
-  @media (min-width: 1200px) {
-    font-size: ${({ fontSize }) => fontSize};
-  }
-`;
-
-const PrimaryButton = styled(Button)`
-  background-color: var(--primary-color);
-  margin-top: 20px;
-  height: 50px;
-  padding: 9px;
-  color: white;
-  margin-top: 10px;
-  &:hover {
-    background-color: var(--primary-color);
-    box-shadow: 1px 1px 20px gray;
-  }
-`;
-
-const SectionTwobuttonContainer = styled.div`
-  background-color: #ffffff;
-
-  border-radius: 0 0 6px 6px;
-  padding: 10px;
-  margin: auto;
-  
 `;
 
 const AccordionContainer = styled.div`
@@ -155,12 +69,10 @@ const PlanContainer = styled.div`
   }
 `;
 
-
 const primaryColor = "var( --primary-color)";
 const primarycontent = "var(--primary-content)";
 const lightGray = "var(--gray-light)";
 const deepGray = "var(--gray-deep)";
-const centerText = { display: "flex", alignItems: "center" };
 
 const PlanDetails = () => (
   <>
@@ -286,7 +198,7 @@ const PlanDetails = () => (
   </>
 );
 
-const PricingGrid = () => {
+const PricingGrid = ({ plan, price, Includes }) => {
   const packages = [
     {
       plan: "Starter",
@@ -342,22 +254,25 @@ const PricingGrid = () => {
   };
 
   return (
-    <Main>
-      {/* <Shape /> */}
-      <Container>
-        <Section>
-          {/* Grid One */}
+  
+   
+       
           <GridContainers>
             <GridBox>
-              <Texts
-                fontSize={"46px"}
-                style={{ color: primarycontent, fontWeight: "700" }}
+              <Typography
+                sx={{
+                  fontSize: "var(--font-xxl)",
+                  color: "var(--primary-content)",
+                  fontWeight: "700",
+                  marginTop: "20px",
+                  textAlign: "center",
+                }}
               >
                 {packages[0].plan}
-              </Texts>
+              </Typography>
 
-              <Texts
-                style={{
+              <Typography
+                sx={{
                   background: lightGray,
                   color: deepGray,
                   height: "1rem",
@@ -365,15 +280,16 @@ const PricingGrid = () => {
                   padding: "3px",
                   fontSize: "7px",
                   fontWeight: "800",
-                  ...centerText,
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
                 MONTHLY ONLY
-              </Texts>
+              </Typography>
             </GridBox>
-            <Texts
-              fontSize={"13px"}
-              style={{
+
+            <Typography
+              sx={{
                 width: "100%",
                 color: "black",
                 backgroundColor: lightGray,
@@ -381,20 +297,24 @@ const PricingGrid = () => {
                 padding: "4px",
                 fontWeight: "700",
                 borderRadius: "6px",
-                ...centerText,
+                display: "flex",
+                alignItems: "center",
+                fontSize: "var(--font-s)",
               }}
             >
               UP TO 50 EMPLOYEES
-            </Texts>
+            </Typography>
 
             <div style={{ display: "flex", marginTop: "20px" }}>
-              <Texts style={{ fontSize: "12px", fontWeight: "400" }}>
+              <Typography sx={{ fontSize: "var(--font-s)", fontWeight: "400" }}>
                 ${" "}
-                <span style={{ fontSize: "48px", fontWeight: "900" }}>
+                <span
+                  style={{ fontSize: "var(--font-xxl)", fontWeight: "900" }}
+                >
                   {packages[0].price}
                 </span>{" "}
                 USD
-              </Texts>
+              </Typography>
             </div>
 
             <PlanContainer>
@@ -420,207 +340,11 @@ const PricingGrid = () => {
             </AccordionContainer>
           </GridContainers>
 
-          {/* /////Grid Two */}
-          <GridContainers>
-            <GridBox>
-              <Texts
-                fontSize={"46px"}
-                style={{ color: primarycontent, fontWeight: "700" }}
-              >
-                {packages[1].plan}
-              </Texts>
 
-              <Texts
-                style={{
-                  background: lightGray,
-                  color: deepGray,
-                  height: "1rem",
-                  borderRadius: "30px",
-                  padding: "3px",
-                  fontSize: "7px",
-                  fontWeight: "800",
-                  ...centerText,
-                }}
-              >
-                MONTHLY ONLY
-              </Texts>
-            </GridBox>
-            <Texts
-              fontSize={"13px"}
-              style={{
-                width: "100%",
-                color: "black",
-                backgroundColor: lightGray,
-                height: "40px",
-                padding: "4px",
-                fontWeight: "700",
-                borderRadius: "6px",
-                ...centerText,
-              }}
-            >
-              UP TO 50 EMPLOYEES
-            </Texts>
+  
 
-            <div style={{ display: "flex", marginTop: "20px" }}>
-              <Texts style={{ fontSize: "12px", fontWeight: "400" }}>
-                ${" "}
-                <span style={{ fontSize: "48px", fontWeight: "900" }}>
-                  {" "}
-                  {packages[1].price}
-                </span>{" "}
-                USD
-              </Texts>
-            </div>
-
-            <div
-              style={{
-                backgroundColor: lightGray,
-                height: "250px",
-                flexDirection: "column",
-                padding: "20px",
-              }}
-            >
-              <p
-                style={{
-                  textAlign: "start",
-                  marginBottom: "15px",
-                  fontWeight: "600px",
-                }}
-              >
-                Includes :
-              </p>
-              <ul>
-                <li style={{ marginBottom: "5px" }}>
-                  Features available in all plans
-                </li>
-                <li style={{ marginBottom: "5px" }}>Up to 2 active jobs</li>
-                <li style={{ marginBottom: "5px" }}>
-                  200 AI sourcing profile views per month
-                </li>
-              </ul>
-            </div>
-
-            <GridBox
-              style={{
-                height: "210px",
-                border: "1px solid gray ",
-                borderRadius: "6px",
-              }}
-            ></GridBox>
-          </GridContainers>
-
-          {/* /////Grid Three */}
-          <GridContainers>
-            <GridBox>
-              <Texts
-                fontSize={"46px"}
-                style={{ color: primarycontent, fontWeight: "700" }}
-              >
-                {packages[2].plan}
-              </Texts>
-
-              <Texts
-                style={{
-                  background: lightGray,
-                  color: deepGray,
-                  height: "1rem",
-                  borderRadius: "30px",
-                  padding: "3px",
-                  fontSize: "7px",
-                  fontWeight: "800",
-                  ...centerText,
-                }}
-              >
-                MONTHLY ONLY
-              </Texts>
-            </GridBox>
-            <Texts
-              fontSize={"13px"}
-              style={{
-                width: "100%",
-                color: "black",
-                backgroundColor: lightGray,
-                height: "40px",
-                padding: "4px",
-                fontWeight: "700",
-                borderRadius: "6px",
-                ...centerText,
-              }}
-            >
-              UP TO 50 EMPLOYEES
-            </Texts>
-
-            <div style={{ display: "flex", marginTop: "20px" }}>
-              <Texts style={{ fontSize: "12px", fontWeight: "400" }}>
-                ${" "}
-                <span style={{ fontSize: "48px", fontWeight: "900" }}>
-                  {" "}
-                  {packages[2].price}
-                </span>{" "}
-                USD
-              </Texts>
-            </div>
-
-            <div
-              style={{
-                backgroundColor: lightGray,
-                height: "250px",
-                flexDirection: "column",
-                padding: "20px",
-              }}
-            >
-              <p
-                style={{
-                  textAlign: "start",
-                  marginBottom: "15px",
-                  fontWeight: "600px",
-                }}
-              >
-                Includes :
-              </p>
-              <ul>
-                <li style={{ marginBottom: "5px" }}>
-                  Features available in all plans
-                </li>
-                <li style={{ marginBottom: "5px" }}>Up to 2 active jobs</li>
-                <li style={{ marginBottom: "5px" }}>
-                  200 AI sourcing profile views per month
-                </li>
-              </ul>
-            </div>
-
-            <GridBox
-              style={{
-                height: "210px",
-                border: "1px solid gray ",
-                borderRadius: "6px",
-              }}
-            ></GridBox>
-          </GridContainers>
-        </Section>
-
-        <SectionTwobuttonContainer>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-
-              marginBottom: "50px",
-            }}
-          >
-            <Texts>
-              The 15-day trial includes the complete feature set of the Standard
-              plan. No credit card required.
-            </Texts>
-            <PrimaryButton style={{ width: "30%" }}>
-              Get a live demo
-            </PrimaryButton>
-          </div>
-        </SectionTwobuttonContainer>
-      </Container>
-    </Main>
+      
+  
   );
 };
 
