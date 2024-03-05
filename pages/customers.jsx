@@ -48,6 +48,7 @@ const SectionOne = styled.div`
 
 const SectionTwo = styled.div`
   width: 100%;
+  
 `;
 const CarouselContainer = styled.div`
   display: flex;
@@ -58,14 +59,18 @@ const CarouselContainer = styled.div`
 
   @media (max-width: 599px) {
     flex-direction: column;
+    background-color: #f0f0fb;
   }
 
   @media (min-width: 600px) and (max-width: 959px) {
     flex-direction: column;
+    background-color: #f0f0fb;
+
   }
 
   @media (min-width: 960px) and (max-width: 1279px) {
     flex-direction: column;
+    background-color: #f0f0fb;
   }
 
   @media (min-width: 1280px) and (max-width: 1919px) {
@@ -86,24 +91,28 @@ const CarouselTextDiv = styled.div`
   width: 695px;
   height: 450px;
   background-color: #f0f0fb;
+
   padding: 20px 155px 20px 20px;
 
   @media (max-width: 599px) {
     width: 80%;
-    padding: 20px;
+    padding: 10px;
     align-items: center;
+    background-color: #f0f0fb;
   }
 
   @media (min-width: 600px) and (max-width: 959px) {
     width: 80%;
-    padding: 20px;
+    padding:10px;
     align-items: center;
+    background-color: #f0f0fb;
   }
 
   @media (min-width: 960px) and (max-width: 1279px) {
     width: 80%;
-    padding: 20px;
+    padding: 10px;
     align-items: center;
+    background-color: #f0f0fb;
   }
 `;
 
@@ -117,24 +126,24 @@ const CarouselImageDiv = styled.div`
 
 
   @media (max-width: 599px) { 
-    width: 80%;
-    padding: 20px ;
+    width: 90%;
+    padding: 10px ;
     transform: translate(0, 0);
-  margin: 0px;
+    margin: 0px;
 }
 
 @media (min-width: 600px) and (max-width: 959px) { 
-  width: 80%;
-  padding: 20px ;
-    transform: translate(0, 0);
+  width:90%;
+  padding: 10px ;
+  transform: translate(0, 0);
   margin: 0px;
 }
 
 @media (min-width: 960px) and (max-width: 1279px) { 
-  width: 80%;
-  padding: 20px ;
-    transform: translate(0, 0);
-  margin: 0px;/ 
+  width: 90%;
+  padding: 10px ;
+  transform: translate(0, 0);
+  margin: 0px;
 }
 
 @media (min-width: 1280px) and (max-width: 1919px) { 
@@ -152,6 +161,23 @@ const CarouselLogo = styled.div`
   width: 130px;
   height: 70px;
   background-color: #919191;
+
+ 
+  @media (max-width: 599px) { 
+    height: 50px;
+    width:90px
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  height: 50px;
+    width:90px
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  height: 50px;
+    width:90px
+}
+
 `;
 
 const CarouselCourtesy = styled.div`
@@ -159,6 +185,17 @@ const CarouselCourtesy = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+
+  @media (max-width: 599px) { 
+    flex-direction: column;
+}
+@media (min-width: 600px) and (max-width: 959px) { 
+  flex-direction: column;
+}
+@media (min-width: 960px) and (max-width: 1279px) { 
+  flex-direction: column;
+}
+  
 `;
 const CarouselCourtesyImage = styled.div`
   border: 2px solid #22bfd3;
@@ -191,6 +228,32 @@ const SectionThreeContent = styled.div`
   height: 350px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 599px) { 
+    grid-template-columns:100%;
+    height: auto;
+    padding: 20px;
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  grid-template-columns:100%;
+  height: auto;
+  padding: 20px;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  grid-template-columns:100%;
+  height: auto;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
 `;
 
 const ContentLeft = styled.div`
@@ -203,14 +266,31 @@ const ContentRight = styled.div`
   align-items: center;
   justify-self: center;
   align-self: center;
+
+  @media (max-width: 599px) { 
+   margin-top: 20px;
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  margin-top: 20px;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  margin-top: 20px; 
+}
+
+
+
+
 `;
 
 const CustomListItemButton = styled(ListItemButton)`
   width: 230px;
+  height: 55px;
   margin: auto;
   border-bottom: 1px solid gray;
-  padding-bottom: 20px;
-
+ 
+transition: all 1s;
   .MuiSvgIcon-root {
     font-size: var(--font-l-2);
   }
@@ -219,11 +299,38 @@ const CustomListItemButton = styled(ListItemButton)`
     border-bottom: 1px solid var(--primary-color);
     color: var(--primary-color);
     background-color: transparent;
+    
     .MuiSvgIcon-root {
+      transition: all 0.5s;
       color: var(--primary-color);
       font-size: 30px;
     }
   }
+
+  @media (max-width: 599px) { 
+    height: auto;
+    &:hover {
+    
+    .MuiSvgIcon-root {
+      font-size: var(--font-l-2);
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  margin-top: 20px;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  margin-top: 20px; 
+}
+
+
+
+
+
+
+
 `;
 
 ////section four
@@ -280,11 +387,51 @@ const RoundContainer = styled.div`
 
   box-shadow: 0px 0px 10px gray;
   z-index: 10;
+
+
+  @media (max-width: 599px) { 
+  display: none;
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  display: none;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  display: none;
+}
+
+
+
+
 `;
 const SectionFourContent = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
+
+justify-content: center;
+
+
+
+  @media (max-width: 599px) { 
+    grid-template-columns: 100%;
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  grid-template-columns: 100%;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  grid-template-columns: 100%;
+}
+
+
+
+
+
+
+
 `;
 const LeftItem = styled.div`
   max-width: 100%;
@@ -302,6 +449,26 @@ const RightItem = styled.div`
   flex-direction: column;
 
   position: relative;
+
+  @media (max-width: 599px) { 
+    align-items: center;
+  padding-right: 0px;
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+ 
+  align-items: center;
+  padding-right: 0px;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  align-items: center;
+  padding-right: 0px;
+}
+
+
+
+
 `;
 
 const RightItemBox = styled.div`
@@ -347,13 +514,47 @@ const SectionFive = styled.div`
 const SectionFiveContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+justify-content: center;
+
+  @media (max-width: 599px) { 
+    grid-template-columns:95%;
+
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  grid-template-columns:95%;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  grid-template-columns:95%;
+  
+}
+
+
 `;
 
 const GridItems = styled.div`
   height: 340px;
   margin: 5px;
   border-bottom: 1px solid #c1c1c1;
+
+  @media (max-width: 599px) { 
+    height: 540px;
+}
+
+@media (min-width: 600px) and (max-width: 959px) { 
+  height: 340px; 
+}
+
+@media (min-width: 960px) and (max-width: 1279px) { 
+  height: 340px; 
+}
+
+
+
+
 `;
+
 const InsideImage = styled.div`
   height: 60%;
   border-radius: 6px;
@@ -465,6 +666,7 @@ const customers = () => {
   ];
 
   const six = [1, 2, 3, 4, 5, 6];
+const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCING TIME TO HIRE", "RAPIDLY SCALING"]
 
   return (
     <Main>
@@ -493,18 +695,24 @@ const customers = () => {
       </SectionOne>
 
       <SectionTwo>
-        <Carousel>
+        <Carousel showArrows={false}   
+        showStatus={false}
+        infiniteLoop
+        autoPlay
+        dynamicHeight
+        >
           {image.map((image, key) => (
             <>
               <CarouselContainer>
                 <CarouselTextDiv>
                   <CarouselLogo>logo</CarouselLogo>
-                  <Typography sx={{ fontSize: "var(--font-l)" }}>
+                  <Typography sx={{ fontSize: "var(--font-l)" , marginTop:'20px'}}>
                     This [in-person interview] process is not possible for us
                     right now due to the [COVID-19] crisis. This tool has helped
                     us be more efficient during this time and get our jobs done.
                     Thank you!
                   </Typography>
+
                   <CarouselCourtesy>
                     <CarouselCourtesyImage>
                       <Image src="" alt="" height="" width="" />
@@ -536,60 +744,28 @@ const customers = () => {
           </ContentLeft>
           <ContentRight>
             <div>
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                  GOING REMOTE
-                </Typography>
-              </CustomListItemButton>
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                  CUTTING COSTS
-                </Typography>
-              </CustomListItemButton>{" "}
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                  DIGITAL TRANSFORMATION
-                </Typography>
-              </CustomListItemButton>{" "}
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                  REDUCING TIME TO HIRE
-                </Typography>
-              </CustomListItemButton>{" "}
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                  RAPIDLY SCALING
-                </Typography>
-              </CustomListItemButton>{" "}
-              <CustomListItemButton>
-                <ListItemIcon>
-                  <PlayCircleFilledWhiteIcon />
-                </ListItemIcon>
-                <Typography fontWeight={600} fontSize={12} variant="body1">
-                  RAPIDLY SCALING
-                </Typography>
-              </CustomListItemButton>
+{buttons.map((data,idx)=>(<>
+  <CustomListItemButton key={idx}>
+<ListItemIcon>
+  <PlayCircleFilledWhiteIcon />
+</ListItemIcon>
+<Typography fontWeight={600} fontSize={12} variant="body1">
+  {data}
+</Typography>
+</CustomListItemButton>
+</>))}
+              
+
+
+
+
             </div>
           </ContentRight>
         </SectionThreeContent>
-      </SectionThree>
+      </SectionThree> 
 
-      <SectionFour>
+
+       <SectionFour>
         <SectionFourContainer>
           <div>
             <Wave>
@@ -609,8 +785,8 @@ const customers = () => {
                 <Image
                   src="/customers.webp"
                   alt="Customers"
-                  height={500}
-                  width={800}
+                  height={1558}
+                  width={1403}
                   style={{ maxWidth: "100%", maxHeight: "100%" }}
                   layout="responsive"
                   objectFit="contain"
@@ -717,7 +893,7 @@ const customers = () => {
             ></path>
           </svg>
         </WhiteWave>
-      </SectionFour>
+      </SectionFour> 
 
       <SectionFive>
         <SectionFiveContainer>
