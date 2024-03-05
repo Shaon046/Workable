@@ -43,12 +43,12 @@ const SectionOne = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 325px;
+
+  padding: 30px;
 `;
 
 const SectionTwo = styled.div`
   width: 100%;
-  
 `;
 const CarouselContainer = styled.div`
   display: flex;
@@ -65,7 +65,6 @@ const CarouselContainer = styled.div`
   @media (min-width: 600px) and (max-width: 959px) {
     flex-direction: column;
     background-color: #f0f0fb;
-
   }
 
   @media (min-width: 960px) and (max-width: 1279px) {
@@ -103,7 +102,7 @@ const CarouselTextDiv = styled.div`
 
   @media (min-width: 600px) and (max-width: 959px) {
     width: 80%;
-    padding:10px;
+    padding: 10px;
     align-items: center;
     background-color: #f0f0fb;
   }
@@ -124,37 +123,34 @@ const CarouselImageDiv = styled.div`
   transform: translate(-150px, 0);
   margin-right: -150px;
 
-
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     width: 90%;
-    padding: 10px ;
+    padding: 10px;
     transform: translate(0, 0);
     margin: 0px;
-}
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  width:90%;
-  padding: 10px ;
-  transform: translate(0, 0);
-  margin: 0px;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    width: 90%;
+    padding: 10px;
+    transform: translate(0, 0);
+    margin: 0px;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  width: 90%;
-  padding: 10px ;
-  transform: translate(0, 0);
-  margin: 0px;
-}
+  @media (min-width: 960px) and (max-width: 1279px) {
+    width: 90%;
+    padding: 10px;
+    transform: translate(0, 0);
+    margin: 0px;
+  }
 
-@media (min-width: 1280px) and (max-width: 1919px) { 
-    /* CSS rules for large devices */ 
-}
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    /* CSS rules for large devices */
+  }
 
-@media (min-width: 1920px) { 
-    /* CSS rules for extra-large devices */ 
-}
-
-
+  @media (min-width: 1920px) {
+    /* CSS rules for extra-large devices */
+  }
 `;
 
 const CarouselLogo = styled.div`
@@ -162,22 +158,20 @@ const CarouselLogo = styled.div`
   height: 70px;
   background-color: #919191;
 
- 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     height: 50px;
-    width:90px
-}
+    width: 90px;
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  height: 50px;
-    width:90px
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    height: 50px;
+    width: 90px;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  height: 50px;
-    width:90px
-}
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    height: 50px;
+    width: 90px;
+  }
 `;
 
 const CarouselCourtesy = styled.div`
@@ -186,16 +180,15 @@ const CarouselCourtesy = styled.div`
   align-items: center;
   margin-top: 10px;
 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     flex-direction: column;
-}
-@media (min-width: 600px) and (max-width: 959px) { 
-  flex-direction: column;
-}
-@media (min-width: 960px) and (max-width: 1279px) { 
-  flex-direction: column;
-}
-  
+  }
+  @media (min-width: 600px) and (max-width: 959px) {
+    flex-direction: column;
+  }
+  @media (min-width: 960px) and (max-width: 1279px) {
+    flex-direction: column;
+  }
 `;
 const CarouselCourtesyImage = styled.div`
   border: 2px solid #22bfd3;
@@ -229,36 +222,43 @@ const SectionThreeContent = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 599px) { 
-    grid-template-columns:100%;
+  @media (max-width: 599px) {
+    grid-template-columns: 100%;
     height: auto;
-    padding: 20px;
-}
+    width: 100%;
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  grid-template-columns:100%;
-  height: auto;
-  padding: 20px;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    grid-template-columns: 100%;
+    height: auto;
+    width: 100%;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  grid-template-columns:100%;
-  height: auto;
-  padding: 20px;
-}
-
-
-
-
-
-
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    grid-template-columns: 100%;
+    height: auto;
+    width: 100%;
+  }
 `;
 
 const ContentLeft = styled.div`
   justify-self: center;
   align-self: center;
+
+  @media (max-width: 599px) {
+    justify-self: start;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) and (max-width: 959px) {
+    justify-self: start;
+    width: 100%;
+  }
+
+  @media (min-width: 960px) and (max-width: 1279px) {
+    justify-self: start;
+    width: 100%;
+  }
 `;
 const ContentRight = styled.div`
   padding-left: 30px;
@@ -266,22 +266,25 @@ const ContentRight = styled.div`
   align-items: center;
   justify-self: center;
   align-self: center;
+  width: 100%;
 
-  @media (max-width: 599px) { 
-   margin-top: 20px;
-}
+  @media (max-width: 599px) {
+    margin-top: 20px;
+    justify-self: start;
+    padding-left: 0px;
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  margin-top: 20px;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    margin-top: 20px;
+    justify-self: start;
+    padding-left: 0px;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  margin-top: 20px; 
-}
-
-
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    margin-top: 20px;
+    justify-self: start;
+    padding-left: 0px;
+  }
 `;
 
 const CustomListItemButton = styled(ListItemButton)`
@@ -289,8 +292,8 @@ const CustomListItemButton = styled(ListItemButton)`
   height: 55px;
   margin: auto;
   border-bottom: 1px solid gray;
- 
-transition: all 1s;
+
+  transition: all 1s;
   .MuiSvgIcon-root {
     font-size: var(--font-l-2);
   }
@@ -299,7 +302,7 @@ transition: all 1s;
     border-bottom: 1px solid var(--primary-color);
     color: var(--primary-color);
     background-color: transparent;
-    
+
     .MuiSvgIcon-root {
       transition: all 0.5s;
       color: var(--primary-color);
@@ -307,30 +310,25 @@ transition: all 1s;
     }
   }
 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     height: auto;
+    width: 100%;
     &:hover {
-    
-    .MuiSvgIcon-root {
-      font-size: var(--font-l-2);
+      .MuiSvgIcon-root {
+        font-size: var(--font-l-2);
+      }
     }
   }
-}
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  margin-top: 20px;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    margin-top: 20px;
+    width: 100%;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  margin-top: 20px; 
-}
-
-
-
-
-
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    margin-top: 20px;
+    width: 100%;
+  }
 `;
 
 ////section four
@@ -388,55 +386,43 @@ const RoundContainer = styled.div`
   box-shadow: 0px 0px 10px gray;
   z-index: 10;
 
+  @media (max-width: 599px) {
+    display: none;
+  }
 
-  @media (max-width: 599px) { 
-  display: none;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    display: none;
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  display: none;
-}
-
-@media (min-width: 960px) and (max-width: 1279px) { 
-  display: none;
-}
-
-
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    display: none;
+  }
 `;
 const SectionFourContent = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
 
-justify-content: center;
+  justify-content: center;
 
-
-
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     grid-template-columns: 100%;
-}
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  grid-template-columns: 100%;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    grid-template-columns: 100%;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  grid-template-columns: 100%;
-}
-
-
-
-
-
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    grid-template-columns: (2, 1fr);
+  }
 `;
 const LeftItem = styled.div`
   max-width: 100%;
   height: 600px;
   padding: 20px;
+  display: flex;
+  justify-content: center;
   background-color: var(--primary-content);
 `;
 
@@ -450,25 +436,20 @@ const RightItem = styled.div`
 
   position: relative;
 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     align-items: center;
-  padding-right: 0px;
-}
+    padding-right: 0px;
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
- 
-  align-items: center;
-  padding-right: 0px;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    align-items: center;
+    padding-right: 0px;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  align-items: center;
-  padding-right: 0px;
-}
-
-
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    align-items: center;
+    padding-right: 0px;
+  }
 `;
 
 const RightItemBox = styled.div`
@@ -514,23 +495,19 @@ const SectionFive = styled.div`
 const SectionFiveContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-justify-content: center;
+  justify-content: center;
 
-  @media (max-width: 599px) { 
-    grid-template-columns:95%;
+  @media (max-width: 599px) {
+    grid-template-columns: 95%;
+  }
 
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    grid-template-columns: 95%;
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  grid-template-columns:95%;
-}
-
-@media (min-width: 960px) and (max-width: 1279px) { 
-  grid-template-columns:95%;
-  
-}
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    grid-template-columns: 95%;
+  }
 `;
 
 const GridItems = styled.div`
@@ -538,21 +515,17 @@ const GridItems = styled.div`
   margin: 5px;
   border-bottom: 1px solid #c1c1c1;
 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     height: 540px;
-}
+  }
 
-@media (min-width: 600px) and (max-width: 959px) { 
-  height: 540px;
-}
+  @media (min-width: 600px) and (max-width: 959px) {
+    height: 540px;
+  }
 
-@media (min-width: 960px) and (max-width: 1279px) { 
-  height: 540px;
-}
-
-
-
-
+  @media (min-width: 960px) and (max-width: 1279px) {
+    height: 740px;
+  }
 `;
 
 const InsideImage = styled.div`
@@ -666,7 +639,13 @@ const customers = () => {
   ];
 
   const six = [1, 2, 3, 4, 5, 6];
-const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCING TIME TO HIRE", "RAPIDLY SCALING"]
+  const buttons = [
+    "GOING REMOTE",
+    "CUTTING COSTS",
+    "DIGITAL TRANSFORMATION",
+    "REDUCING TIME TO HIRE",
+    "RAPIDLY SCALING",
+  ];
 
   return (
     <Main>
@@ -676,6 +655,7 @@ const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCIN
             fontSize: "var(--font-xxl)",
             fontWeight: "600",
             color: "var(--primary-color)",
+            marginTop: "30px",
           }}
         >
           In good company
@@ -687,6 +667,7 @@ const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCIN
             color: "black",
             lineHeight: "1.5",
             maxWidth: "600px",
+            margin: "30px 0 30px 0",
           }}
         >
           Companies of all shapes and sizes are using Workable to advance their
@@ -695,18 +676,21 @@ const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCIN
       </SectionOne>
 
       <SectionTwo>
-        <Carousel showArrows={false}   
-        showStatus={false}
-        infiniteLoop
-        autoPlay
-        dynamicHeight
+        <Carousel
+          showArrows={false}
+          showStatus={false}
+          infiniteLoop
+          autoPlay
+          dynamicHeight
         >
           {image.map((image, key) => (
             <>
               <CarouselContainer>
                 <CarouselTextDiv>
                   <CarouselLogo>logo</CarouselLogo>
-                  <Typography sx={{ fontSize: "var(--font-l)" , marginTop:'20px'}}>
+                  <Typography
+                    sx={{ fontSize: "var(--font-l)", marginTop: "20px" }}
+                  >
                     This [in-person interview] process is not possible for us
                     right now due to the [COVID-19] crisis. This tool has helped
                     us be more efficient during this time and get our jobs done.
@@ -744,28 +728,28 @@ const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCIN
           </ContentLeft>
           <ContentRight>
             <div>
-{buttons.map((data,idx)=>(<>
-  <CustomListItemButton key={idx}>
-<ListItemIcon>
-  <PlayCircleFilledWhiteIcon />
-</ListItemIcon>
-<Typography fontWeight={600} fontSize={12} variant="body1">
-  {data}
-</Typography>
-</CustomListItemButton>
-</>))}
-              
-
-
-
-
+              {buttons.map((data, idx) => (
+                <>
+                  <CustomListItemButton key={idx}>
+                    <ListItemIcon>
+                      <PlayCircleFilledWhiteIcon />
+                    </ListItemIcon>
+                    <Typography
+                      fontWeight={600}
+                      fontSize={"var(--font-s)"}
+                      variant="body1"
+                    >
+                      {data}
+                    </Typography>
+                  </CustomListItemButton>
+                </>
+              ))}
             </div>
           </ContentRight>
         </SectionThreeContent>
-      </SectionThree> 
+      </SectionThree>
 
-
-       <SectionFour>
+      <SectionFour>
         <SectionFourContainer>
           <div>
             <Wave>
@@ -787,7 +771,11 @@ const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCIN
                   alt="Customers"
                   height={1558}
                   width={1403}
-                  style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  style={{
+                    maxWidth: "495px",
+                    maxHeight: "550px",
+                    margin: "auto",
+                  }}
                   layout="responsive"
                   objectFit="contain"
                 />
@@ -893,7 +881,7 @@ const buttons=["GOING REMOTE","CUTTING COSTS", "DIGITAL TRANSFORMATION","REDUCIN
             ></path>
           </svg>
         </WhiteWave>
-      </SectionFour> 
+      </SectionFour>
 
       <SectionFive>
         <SectionFiveContainer>
