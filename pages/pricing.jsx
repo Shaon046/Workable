@@ -9,7 +9,6 @@ import GpsFixedIcon from "@mui/icons-material/GpsFixed";
 import StarIcon from "@mui/icons-material/Star";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
-
 import Features from "./components/pricingPageUtils/Features";
 
 const Main = styled.div`
@@ -131,45 +130,7 @@ const SectionTwobuttonContainer = styled.div`
 //section three
 
 const Sectionthree = styled.div`
-  @media (max-width: 599px) {
-    width: 100%;
-  }
-  @media (min-width: 600px) and (max-width: 959px) {
-    width: 100%;
-  }
-
-  @media (min-width: 960px) and (max-width: 1279px) {
-    /* CSS rules for medium devices */
-  }
-`;
-
-const SectionThreeGrid = styled.div`
-  display: grid;
-  padding: 20px;
-
-  @media (min-width: 960px) and (max-width: 1279px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (min-width: 1280px) and (max-width: 1919px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (min-width: 1920px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-`;
-
-const List = styled.li`
-  font-size: 16px;
-  width: 500;
-  list-style: none;
-  margin-top: 20px;
-  cursor: pointer;
-
-  &:hover {
-    color: #ababab;
-  }
+  width: 100%;
 `;
 
 //sectionFour
@@ -401,6 +362,77 @@ const pricing = () => {
     },
   ];
 
+  const features = [
+    {
+      data: [
+        "Anonymized screening",
+        "Interview kits & scorecards",
+        "2 way calendar integration (Gmail/365)",
+        "Candidate self-scheduling",
+        "Multi-part interview scheduling",
+        "Zoom integration",
+        "3rd party background checks",
+        "Share candidate",
+        "Advanced access rights",
+        "Custom candidate profiles",
+        "Top-rated mobile app",
+      ],
+      header: "First Object Header",
+      icon: GpsFixedIcon,
+    },
+    {
+      data: [
+        "Anonymized screening",
+        "Interview kits & scorecards",
+        "2 way calendar integration (Gmail/365)",
+        "Candidate self-scheduling",
+        "Multi-part interview scheduling",
+        "Zoom integration",
+        "3rd party background checks",
+        "Share candidate",
+        "Advanced access rights",
+        "Custom candidate profiles",
+        "Top-rated mobile app",
+      ],
+      header: "Second Object Header",
+      icon: StarIcon,
+    },
+    {
+      data: [
+        "Anonymized screening",
+        "Interview kits & scorecards",
+        "2 way calendar integration (Gmail/365)",
+        "Candidate self-scheduling",
+        "Multi-part interview scheduling",
+        "Zoom integration",
+        "3rd party background checks",
+        "Share candidate",
+        "Advanced access rights",
+        "Custom candidate profiles",
+        "Top-rated mobile app",
+      ],
+      header: "Third Object Header",
+      icon: SettingsIcon,
+    },
+    {
+      data: [
+        "Anonymized screening",
+        "Interview kits & scorecards",
+        "2 way calendar integration (Gmail/365)",
+        "Candidate self-scheduling",
+        "Multi-part interview scheduling",
+        "Zoom integration",
+        "3rd party background checks",
+        "Share candidate",
+        "Advanced access rights",
+        "Custom candidate profiles",
+        "Top-rated mobile app",
+      ],
+      header: "Fourth Object Header",
+      icon: AccountTreeIcon,
+    },
+  ];
+
   const listItems = [
     "Job board distribution (200+)",
     "AI candidate sourcing",
@@ -504,31 +536,7 @@ const pricing = () => {
           Features available in all plans
         </Typography>
 
-        <SectionThreeGrid>
-          <Features
-            listItems={listItems}
-            Icon={GpsFixedIcon}
-            header={"Source & attract"}
-          />
-
-          <Features
-            listItems={listItems}
-            Icon={StarIcon}
-            header={"Evaluate & collaborate"}
-          />
-
-          <Features
-            listItems={listItems}
-            Icon={SettingsIcon}
-            header={"Automate & hire"}
-          />
-
-          <Features
-            listItems={listItems}
-            Icon={AccountTreeIcon}
-            header={"Onboard & manage"}
-          />
-        </SectionThreeGrid>
+        <Features features={features} />
       </Sectionthree>
 
       <SectionFour>
