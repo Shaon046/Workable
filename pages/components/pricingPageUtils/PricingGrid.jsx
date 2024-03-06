@@ -102,8 +102,11 @@ const PricingGrid = ({ packages }) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  
-  {packages.map((data, idx) => {console.log(typeof(data.includes))})}
+  {
+    packages.map((data, idx) => {
+      console.log(typeof data.includes);
+    });
+  }
 
   return (
     <GridSection>
@@ -202,8 +205,6 @@ const PricingGrid = ({ packages }) => {
 export default PricingGrid;
 
 const PlanDetails = ({ includes }) => {
-
-
   return (
     <>
       {" "}
@@ -226,13 +227,11 @@ const PlanDetails = ({ includes }) => {
           Includes :
         </Typography>
 
-
-
         <ul>
-        {/* {includes.map((data,idx)=>(<li key={idx} style={{ marginBottom: "5px" }}>
+          {/* {includes.map((data,idx)=>(<li key={idx} style={{ marginBottom: "5px" }}>
            {data}
           </li>))} */}
-          
+
           <li style={{ marginBottom: "5px" }}>Up to 2 active jobs</li>
           <li style={{ marginBottom: "5px" }}>
             200 AI sourcing profile views per month
