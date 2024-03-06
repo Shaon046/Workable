@@ -313,12 +313,12 @@ const Circle = styled.div`
   border: 4px solid wheat;
 `;
 
-const pricing = () => {
+const pricing = ( ) => {
   const packages = [
     {
       plan: "Starter",
-      price: 149,
-      Includes: [
+      price: 1249,
+      includes: [
         "Features available in all plans",
         "  Up to 2 active jobs",
         " 200 AI sourcing profile views per month",
@@ -330,10 +330,12 @@ const pricing = () => {
         { " ASSESSMENTS": 29 },
       ],
     },
+
+    
     {
       plan: "Standard",
       price: 349,
-      Includes: [
+      includes: [
         "Features available in all plans",
         "  Up to 2 active jobs",
         " 200 AI sourcing profile views per month",
@@ -345,10 +347,13 @@ const pricing = () => {
         { " ASSESSMENTS": 29 },
       ],
     },
+
+
+
     {
       plan: "primium",
       price: 549,
-      Includes: [
+      includes: [
         "Features available in all plans",
         "  Up to 2 active jobs",
         " 200 AI sourcing profile views per month",
@@ -433,21 +438,7 @@ const pricing = () => {
     },
   ];
 
-  const listItems = [
-    "Job board distribution (200+)",
-    "AI candidate sourcing",
-    "Careers page builder",
-    "Native language options",
-    "Referrals portal with reporting",
-    "Custom application forms",
-    "LinkedIn Recruiter System Connect",
-    "Social media campaigns",
-    "Referrals portal with reporting",
-    "Custom application forms",
-    "LinkedIn Recruiter System Connect",
-    "Social media campaigns",
-  ];
-
+  
   return (
     <Main>
       <SectionOne>
@@ -480,19 +471,10 @@ const pricing = () => {
         </PrimaryButton>
       </SectionOne>
 
-      {/* //Grid */}
+     
       <SectionTwo>
         <Container>
-          <GridSection>
-            {packages.map((data, idx) => (
-              <PricingGrid
-                key={idx}
-                price={data.price}
-                plan={data.plan}
-                Includes={data.Includes}
-              />
-            ))}
-          </GridSection>
+              <PricingGrid packages={packages}/>
         </Container>
 
         <SectionTwobuttonContainer>
