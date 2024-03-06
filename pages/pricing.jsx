@@ -10,10 +10,7 @@ import StarIcon from "@mui/icons-material/Star";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Features from "./components/pricingPageUtils/Features";
 
 const Main = styled.div`
   width: 100%;
@@ -134,48 +131,33 @@ const SectionTwobuttonContainer = styled.div`
 //section three
 
 const Sectionthree = styled.div`
- 
-
- 
-  @media (max-width: 599px) { 
+  @media (max-width: 599px) {
     width: 100%;
   }
-@media (min-width: 600px) and (max-width: 959px) { 
-  width: 100%;
-}
-
-@media (min-width: 960px) and (max-width: 1279px) { 
-    /* CSS rules for medium devices */ 
-}
-
-`;
-
-const ListWrapper = styled.div`
-  margin-bottom: 20px;
-  width: 100%;
-
-`;
-
-const AccordionWrapper = styled.div`
-  display: none;
-  @media (max-width: 599px) {
-    display: block;
-  }
-  @media (min-width: 600px) and (max-width: 959px) { 
-    display: block;
-}
-
-`;
-
-const ShowList = styled.div`
- 
-  @media (max-width: 599px) {
-    display: none;
+  @media (min-width: 600px) and (max-width: 959px) {
+    width: 100%;
   }
 
-  @media (min-width: 600px) and (max-width: 959px) { 
-    display: none;
-}
+  @media (min-width: 960px) and (max-width: 1279px) {
+    /* CSS rules for medium devices */
+  }
+`;
+
+const SectionThreeGrid = styled.div`
+  display: grid;
+  padding: 20px;
+
+  @media (min-width: 960px) and (max-width: 1279px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const List = styled.li`
@@ -187,31 +169,6 @@ const List = styled.li`
 
   &:hover {
     color: #ababab;
-  }
-`;
-
-const HeaderContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const SectionThreeGrid = styled.div`
-  display: grid;
-  padding: 20px 20px 80px 20px;
-
-
-  
-  
-  @media (min-width: 960px) and (max-width: 1279px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (min-width: 1280px) and (max-width: 1919px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (min-width: 1920px) {
-    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
@@ -548,317 +505,29 @@ const pricing = () => {
         </Typography>
 
         <SectionThreeGrid>
-          <ListWrapper>
-            
-            {/* conditional redner */}
-            {
-              <AccordionWrapper>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ArrowDropDownIcon />}
-                    aria-controls="panel1-content"
-                    id="panel1-header"
-                  >
-                    <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {listItems.map((data, idx) => (
-                      <List key={idx}>{data}</List>
-                    ))}
-                  </AccordionDetails>
-                </Accordion>
-              </AccordionWrapper>
-            }
+          <Features
+            listItems={listItems}
+            Icon={GpsFixedIcon}
+            header={"Source & attract"}
+          />
 
-            {/* conditional redner */}
-            {
+          <Features
+            listItems={listItems}
+            Icon={StarIcon}
+            header={"Evaluate & collaborate"}
+          />
 
+          <Features
+            listItems={listItems}
+            Icon={SettingsIcon}
+            header={"Automate & hire"}
+          />
 
-              <ShowList>
-                <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                {listItems.map((data, idx) => (
-                  <List key={idx}>{data}</List>
-                ))}
-              </ShowList>
-            }
-          </ListWrapper>
-
-          <ListWrapper>
-            
-            {/* conditional redner */}
-            {
-              <AccordionWrapper>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ArrowDropDownIcon />}
-                    aria-controls="panel1-content"
-                    id="panel1-header"
-                  >
-                    <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {listItems.map((data, idx) => (
-                      <List key={idx}>{data}</List>
-                    ))}
-                  </AccordionDetails>
-                </Accordion>
-              </AccordionWrapper>
-            }
-
-            {/* conditional redner */}
-            {
-
-
-              <ShowList>
-                <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                {listItems.map((data, idx) => (
-                  <List key={idx}>{data}</List>
-                ))}
-              </ShowList>
-            }
-          </ListWrapper>
-
-
-          <ListWrapper>
-            
-            {/* conditional redner */}
-            {
-              <AccordionWrapper>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ArrowDropDownIcon />}
-                    aria-controls="panel1-content"
-                    id="panel1-header"
-                  >
-                    <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {listItems.map((data, idx) => (
-                      <List key={idx}>{data}</List>
-                    ))}
-                  </AccordionDetails>
-                </Accordion>
-              </AccordionWrapper>
-            }
-
-            {/* conditional redner */}
-            {
-
-
-              <ShowList>
-
-                <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                {listItems.map((data, idx) => (
-                  <List key={idx}>{data}</List>
-                ))}
-              </ShowList>
-            }
-          </ListWrapper>
-
-
-          <ListWrapper>
-            
-            {/* conditional redner */}
-            {
-              <AccordionWrapper>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ArrowDropDownIcon />}
-                    aria-controls="panel1-content"
-                    id="panel1-header"
-                  >
-                    <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    {listItems.map((data, idx) => (
-                      <List key={idx}>{data}</List>
-                    ))}
-                  </AccordionDetails>
-                </Accordion>
-              </AccordionWrapper>
-            }
-
-            {/* conditional redner */}
-            {
-
-
-              <ShowList>
-                <HeaderContainer>
-              {
-                <GpsFixedIcon
-                  sx={{
-                    marginRight: "10px",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-l)",
-                    textAlign: "center",
-                  }}
-                />
-              }
-              <Typography
-                sx={{
-                  fontSize: "var(--font-l)",
-                  color: "var(--primary-color)",
-                  fontWeight: "700",
-                  textAlign: "center",
-                }}
-              >
-                Source & attract{" "}
-              </Typography>
-            </HeaderContainer>
-                {listItems.map((data, idx) => (
-                  <List key={idx}>{data}</List>
-                ))}
-              </ShowList>
-            }
-          </ListWrapper>
-
+          <Features
+            listItems={listItems}
+            Icon={AccountTreeIcon}
+            header={"Onboard & manage"}
+          />
         </SectionThreeGrid>
       </Sectionthree>
 
