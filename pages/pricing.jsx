@@ -313,11 +313,11 @@ const Circle = styled.div`
   border: 4px solid wheat;
 `;
 
-const pricing = ( ) => {
+const pricing = () => {
   const packages = [
     {
       plan: "Starter",
-      price: 1249,
+      price: 129,
       includes: [
         "Features available in all plans",
         "  Up to 2 active jobs",
@@ -325,13 +325,12 @@ const pricing = ( ) => {
       ],
 
       primiumTool: [
-        { "VIDEO INTERVIEWS": "$49" },
+        { "VIDEO INTERVIEWS": 49 },
         { TEXTING: 39 },
         { " ASSESSMENTS": 29 },
       ],
     },
 
-    
     {
       plan: "Standard",
       price: 349,
@@ -342,13 +341,11 @@ const pricing = ( ) => {
       ],
 
       primiumTool: [
-        { "VIDEO INTERVIEWS": "$49" },
+        { "VIDEO INTERVIEWS" : 49 },
         { TEXTING: 39 },
         { " ASSESSMENTS": 29 },
       ],
     },
-
-
 
     {
       plan: "primium",
@@ -360,7 +357,7 @@ const pricing = ( ) => {
       ],
 
       primiumTool: [
-        { "VIDEO INTERVIEWS": "$49" },
+        { "VIDEO INTERVIEWS": 49 },
         { TEXTING: 39 },
         { " ASSESSMENTS": 29 },
       ],
@@ -438,7 +435,6 @@ const pricing = ( ) => {
     },
   ];
 
-  
   return (
     <Main>
       <SectionOne>
@@ -471,10 +467,9 @@ const pricing = ( ) => {
         </PrimaryButton>
       </SectionOne>
 
-     
       <SectionTwo>
         <Container>
-              <PricingGrid packages={packages}/>
+          <PricingGrid packages={packages} />
         </Container>
 
         <SectionTwobuttonContainer>
