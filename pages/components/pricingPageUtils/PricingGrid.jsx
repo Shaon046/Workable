@@ -99,100 +99,103 @@ const PricingGrid = ({ packages }) => {
 
   return (
     <GridSection>
-      {packages.map((data, idx) => (
-        <GridContainers key={idx}>
-          <GridBox>
-            <Typography
-              sx={{
-                fontSize: "var(--font-xxl)",
-                color: "var(--primary-content)",
-                fontWeight: "700",
-                marginTop: "20px",
-                textAlign: "center",
-              }}
-            >
-              {data.plan}
-            </Typography>
+      {packages &&
+        packages.map((data, idx) => (
+          <GridContainers key={idx}>
+            <GridBox>
+              <Typography
+                sx={{
+                  fontSize: "var(--font-xxl)",
+                  color: "var(--primary-content)",
+                  fontWeight: "700",
+                  marginTop: "20px",
+                  textAlign: "center",
+                }}
+              >
+                {data.plan}
+              </Typography>
+
+              <Typography
+                sx={{
+                  background: "var(--gray-light)",
+                  color: "var(--gray-deep)",
+                  height: "1rem",
+                  borderRadius: "30px",
+                  padding: "3px",
+                  fontSize: "7px",
+                  fontWeight: "800",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                MONTHLY ONLY
+              </Typography>
+            </GridBox>
 
             <Typography
               sx={{
-                background: "var(--gray-light)",
-                color: "var(--gray-deep)",
-                height: "1rem",
-                borderRadius: "30px",
-                padding: "3px",
-                fontSize: "7px",
-                fontWeight: "800",
+                width: "100%",
+                color: "var(--primary-content)",
+                backgroundColor: "var(--gray-light)",
+                height: "40px",
+                padding: "4px",
+                fontWeight: "700",
+                borderRadius: "6px",
                 display: "flex",
                 alignItems: "center",
+                fontSize: "var(--font-s)",
               }}
             >
-              MONTHLY ONLY
+              UP TO 50 EMPLOYEES
             </Typography>
-          </GridBox>
 
-          <Typography
-            sx={{
-              width: "100%",
-              color: "var(--primary-content)",
-              backgroundColor: "var(--gray-light)",
-              height: "40px",
-              padding: "4px",
-              fontWeight: "700",
-              borderRadius: "6px",
-              display: "flex",
-              alignItems: "center",
-              fontSize: "var(--font-s)",
-            }}
-          >
-            UP TO 50 EMPLOYEES
-          </Typography>
-
-          <div
-            style={{
-              display: "flex",
-              marginTop: "20px",
-              color: "var(--primary-content)",
-            }}
-          >
-            <Typography sx={{ fontSize: "var(--font-s)", fontWeight: "400" }}>
-              ${" "}
-              <span style={{ fontSize: "var(--font-xxl)", fontWeight: "900" }}>
-                {data.price}
-              </span>{" "}
-              USD
-            </Typography>
-          </div>
-
-          <PlanContainer>
-            <PlanDetails
-              includes={data.includes}
-              primiumTool={data.primiumTool}
-            />
-          </PlanContainer>
-
-          <AccordionContainer>
-            <Accordion
-              expanded={expanded === "panel1"}
-              onChange={handleChange("panel1")}
+            <div
+              style={{
+                display: "flex",
+                marginTop: "20px",
+                color: "var(--primary-content)",
+              }}
             >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
+              <Typography sx={{ fontSize: "var(--font-s)", fontWeight: "400" }}>
+                ${" "}
+                <span
+                  style={{ fontSize: "var(--font-xxl)", fontWeight: "900" }}
+                >
+                  {data.price}
+                </span>{" "}
+                USD
+              </Typography>
+            </div>
+
+            <PlanContainer>
+              <PlanDetails
+                includes={data.includes}
+                primiumTool={data.primiumTool}
+              />
+            </PlanContainer>
+
+            <AccordionContainer>
+              <Accordion
+                expanded={expanded === "panel1"}
+                onChange={handleChange("panel1")}
               >
-                Show more
-              </AccordionSummary>
-              <AccordionDetails>
-                <PlanDetails
-                  includes={data.includes}
-                  primiumTool={data.primiumTool}
-                />
-              </AccordionDetails>
-            </Accordion>
-          </AccordionContainer>
-        </GridContainers>
-      ))}
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                >
+                  Show more
+                </AccordionSummary>
+                <AccordionDetails>
+                  <PlanDetails
+                    includes={data.includes}
+                    primiumTool={data.primiumTool}
+                  />
+                </AccordionDetails>
+              </Accordion>
+            </AccordionContainer>
+          </GridContainers>
+        ))}
     </GridSection>
   );
 };
@@ -200,12 +203,6 @@ const PricingGrid = ({ packages }) => {
 export default PricingGrid;
 
 const PlanDetails = ({ includes, primiumTool }) => {
-  console.log(
-    primiumTool.map((data) => {
-      console.log(data);
-    })
-  );
-
   return (
     <>
       <div
@@ -252,42 +249,43 @@ const PlanDetails = ({ includes, primiumTool }) => {
 
         <div>
           <ul>
-            {primiumTool.map((data, idx) => (
-              <li
-                key={idx}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  textAlign: "center",
-                  marginTop: "5px",
-                }}
-              >
-                {" "}
-                <Typography
+            {primiumTool &&
+              primiumTool.map((data, idx) => (
+                <li
+                  key={idx}
                   style={{
-                    fontSize: "12px",
-                    color: "var( --primary-color)",
-                    fontWeight: "800",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    textAlign: "center",
+                    marginTop: "5px",
                   }}
                 >
-                  {Object.keys(data)}
-                </Typography>
-                <Typography>
-                  +
-                  <span
+                  {" "}
+                  <Typography
                     style={{
-                      fontSize: "20px",
+                      fontSize: "12px",
+                      color: "var( --primary-color)",
                       fontWeight: "800",
-                      color: "var(--primary-content)",
                     }}
                   >
-                    ${data[Object.keys(data)]}
-                  </span>
-                  /mo
-                </Typography>{" "}
-              </li>
-            ))}
+                    {Object.keys(data)}
+                  </Typography>
+                  <Typography>
+                    +
+                    <span
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: "800",
+                        color: "var(--primary-content)",
+                      }}
+                    >
+                      ${data[Object.keys(data)]}
+                    </span>
+                    /mo
+                  </Typography>{" "}
+                </li>
+              ))}
           </ul>
         </div>
       </GridBox>

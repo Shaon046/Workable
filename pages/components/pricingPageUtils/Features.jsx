@@ -78,7 +78,7 @@ const HeaderContainer = styled.div`
 const Features = ({ features }) => {
   return (
     <Grid>
-      {features.map((data, idx) => (
+      {features && features.map((data, idx) => (
         <div key={idx}>
           {/* conditional redner */}
           {
@@ -113,7 +113,7 @@ const Features = ({ features }) => {
                   </HeaderContainer>
                 </AccordionSummary>
                 <AccordionDetails>
-                  {data.data.map((data, idx) => (
+                  {data && data.data.map((data, idx) => (
                     <List key={idx}>{data}</List>
                   ))}
                 </AccordionDetails>
