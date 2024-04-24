@@ -97,8 +97,6 @@ const PricingGrid = ({ packages }) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-
-
   return (
     <GridSection>
       {packages.map((data, idx) => (
@@ -115,8 +113,6 @@ const PricingGrid = ({ packages }) => {
             >
               {data.plan}
             </Typography>
-
-
 
             <Typography
               sx={{
@@ -139,7 +135,7 @@ const PricingGrid = ({ packages }) => {
             sx={{
               width: "100%",
               color: "var(--primary-content)",
-              backgroundColor:"var(--gray-light)",
+              backgroundColor: "var(--gray-light)",
               height: "40px",
               padding: "4px",
               fontWeight: "700",
@@ -151,8 +147,6 @@ const PricingGrid = ({ packages }) => {
           >
             UP TO 50 EMPLOYEES
           </Typography>
-
-
 
           <div
             style={{
@@ -171,7 +165,10 @@ const PricingGrid = ({ packages }) => {
           </div>
 
           <PlanContainer>
-            <PlanDetails includes={data.includes}  primiumTool={data.primiumTool} />
+            <PlanDetails
+              includes={data.includes}
+              primiumTool={data.primiumTool}
+            />
           </PlanContainer>
 
           <AccordionContainer>
@@ -187,8 +184,11 @@ const PricingGrid = ({ packages }) => {
                 Show more
               </AccordionSummary>
               <AccordionDetails>
-                <PlanDetails  includes={data.includes}  primiumTool={data.primiumTool} />
-              </AccordionDetails  >
+                <PlanDetails
+                  includes={data.includes}
+                  primiumTool={data.primiumTool}
+                />
+              </AccordionDetails>
             </Accordion>
           </AccordionContainer>
         </GridContainers>
@@ -199,13 +199,12 @@ const PricingGrid = ({ packages }) => {
 
 export default PricingGrid;
 
-
-
 const PlanDetails = ({ includes, primiumTool }) => {
-
-console.log(primiumTool.map((data)=>{console.log(data)}))
-
-
+  console.log(
+    primiumTool.map((data) => {
+      console.log(data);
+    })
+  );
 
   return (
     <>
@@ -229,9 +228,11 @@ console.log(primiumTool.map((data)=>{console.log(data)}))
         </Typography>
 
         <ul>
-          {includes.map((data,idx)=>(<li key={idx} style={{ marginBottom: "5px" }}>
-           {data}
-          </li>))}
+          {includes.map((data, idx) => (
+            <li key={idx} style={{ marginBottom: "5px" }}>
+              {data}
+            </li>
+          ))}
         </ul>
       </div>
       <GridBox
@@ -251,56 +252,43 @@ console.log(primiumTool.map((data)=>{console.log(data)}))
 
         <div>
           <ul>
-
-
-
-
-{primiumTool.map((data,idx)=>(
-   <li key={idx}
-   style={{
-     display: "flex",
-     justifyContent: "space-between",
-     alignItems: "center",
-     textAlign: "center",
-     marginTop: "5px",
-   }}
- >
-   {" "}
-   <Typography
-     style={{
-       fontSize: "12px",
-       color:"var( --primary-color)",
-       fontWeight: "800",
-     }}
-   >
-{Object.keys(data)}
-    
-   </Typography>
-
-
-   <Typography>
-    +
-     <span
-       style={{
-         fontSize: "20px",
-         fontWeight: "800",
-         color: "var(--primary-content)",
-       }}
-     >
-
-     ${data[Object.keys(data)]}
-    
-     </span>
-     /mo
-   </Typography>{" "}
- </li>
-))}
-
-
-
-
-
-   </ul>
+            {primiumTool.map((data, idx) => (
+              <li
+                key={idx}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  textAlign: "center",
+                  marginTop: "5px",
+                }}
+              >
+                {" "}
+                <Typography
+                  style={{
+                    fontSize: "12px",
+                    color: "var( --primary-color)",
+                    fontWeight: "800",
+                  }}
+                >
+                  {Object.keys(data)}
+                </Typography>
+                <Typography>
+                  +
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "800",
+                      color: "var(--primary-content)",
+                    }}
+                  >
+                    ${data[Object.keys(data)]}
+                  </span>
+                  /mo
+                </Typography>{" "}
+              </li>
+            ))}
+          </ul>
         </div>
       </GridBox>
     </>

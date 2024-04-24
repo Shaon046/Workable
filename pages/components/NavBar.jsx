@@ -6,7 +6,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import Link from "next/link";
+import pricing from "../pricing";
 export default function ButtonAppBar() {
   return (
     <Box
@@ -33,7 +34,13 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+
+   <Link href={"/"}><Button style={{color:"white"}}>Home</Button></Link>       
+<Link href={"/pricing"}><Button style={{color:"white"}}>Pricing</Button></Link>
+
+     <Link href={"/customers"}> <Button style={{color:"white"}}>Customer</Button></Link>     
+         
+          
         </Toolbar>
       </AppBar>
     </Box>

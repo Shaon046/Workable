@@ -61,31 +61,6 @@ const SectionTwo = styled.div`
   position: relative;
 `;
 
-const GridSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  background-color: white;
-  box-shadow: 1px 1px 10px gray;
-  border-radius: 6px 6px 0 0;
-  margin: auto;
-  z-index: 1;
-  padding-bottom: 50px;
-
-  @media (max-width: 599px) {
-    grid-template-columns: 100%;
-    box-shadow: none;
-    background-color: transparent;
-    padding-top: 50px;
-  }
-
-  @media (min-width: 600px) and (max-width: 959px) {
-    grid-template-columns: 100%;
-    padding-top: 50px;
-    box-shadow: none;
-    background-color: transparent;
-  }
-`;
 const Container = styled.div`
   width: 100%;
   margin: auto;
@@ -341,7 +316,7 @@ const pricing = () => {
       ],
 
       primiumTool: [
-        { "VIDEO INTERVIEWS" : 49 },
+        { "VIDEO INTERVIEWS": 49 },
         { TEXTING: 39 },
         { " ASSESSMENTS": 29 },
       ],
