@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
-import ScreenSizeComponent from "./components/SreenSize";
+
 import Link from "next/link";
 import { Button } from "@mui/material";
 import Footer from "./components/Footer";
@@ -586,7 +586,7 @@ const CustomButton = styled(Button)`
 `;
 
 const customers = () => {
-  console.log(ScreenSizeComponent());
+ 
   const image = [
     {
       id: "0",
